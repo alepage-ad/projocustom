@@ -288,7 +288,7 @@ h1, h2 {
 }
 
 .hero__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.05;
   color: var(--color-text);
@@ -398,7 +398,7 @@ h1, h2 {
 }
 
 .fifty-fifty__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   line-height: 1.15;
   color: var(--color-text);
@@ -442,7 +442,7 @@ h1, h2 {
 }
 
 .section__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--color-text);
   margin-bottom: 16px;
@@ -531,7 +531,7 @@ h1, h2 {
 }
 
 .stats__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   text-align: center;
   color: var(--color-text);
@@ -677,7 +677,7 @@ h1, h2 {
 }
 
 .formulaire-section__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--color-text);
   margin-bottom: 8px;
@@ -828,7 +828,7 @@ h1, h2 {
 }
 
 .footer-cta__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
   color: var(--color-white);
   margin-bottom: 16px;
