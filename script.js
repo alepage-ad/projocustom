@@ -66,6 +66,7 @@ if (devisForm) {
     { id: 'field-technique',    name: 'technique' },
     { id: 'field-quantite',     name: 'quantite' },
     { id: 'field-description',  name: 'description' },
+    { id: 'field-rgpd',         name: 'rgpd' },
   ];
 
   devisForm.addEventListener('submit', e => {
@@ -77,7 +78,8 @@ if (devisForm) {
       const input = wrapper.querySelector(`[name="${name}"]`);
       if (!input) return;
 
-      if (!input.value.trim()) {
+      const invalid = input.type === 'checkbox' ? !input.checked : !input.value.trim();
+      if (invalid) {
         wrapper.classList.add('field--error');
         isValid = false;
       } else {
