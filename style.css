@@ -817,7 +817,7 @@ ul {
 .footer-cta__subtitle {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-white);
   margin-bottom: 32px;
 }
 
@@ -985,6 +985,155 @@ ul {
 
 .merci__back:hover {
   opacity: 0.7;
+}
+
+/* ── WHATSAPP FAB ── */
+.whatsapp-btn,
+.whatsapp-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover,
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn__tooltip,
+.whatsapp-fab__tooltip {
+  position: absolute;
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-btn__tooltip::after,
+.whatsapp-fab__tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1A1A1A;
+}
+
+.whatsapp-btn:hover .whatsapp-btn__tooltip,
+.whatsapp-fab:hover .whatsapp-fab__tooltip {
+  opacity: 1;
+}
+
+/* ── RGPD CHECKBOX ── */
+.form-rgpd {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.form-rgpd__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form-rgpd__label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+  appearance: auto;
+}
+
+.form-rgpd__label a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ── PAGES LÉGALES ── */
+.legal-page {
+  padding: 120px 0 80px;
+  background-color: var(--color-bg);
+  min-height: calc(100vh - 80px);
+}
+
+.legal-page__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-text);
+  margin-bottom: 48px;
+}
+
+.legal-page__content {
+  max-width: 800px;
+  font-family: var(--font-body);
+  color: #555;
+  line-height: 1.8;
+}
+
+.legal-page__content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.legal-page__content p {
+  margin-bottom: 16px;
+}
+
+.legal-page__content ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.legal-page__content ul li {
+  margin-bottom: 6px;
+}
+
+.legal-page__placeholder-note {
+  display: block;
+  background-color: rgba(157, 132, 199, 0.12);
+  border-left: 3px solid var(--color-primary);
+  padding: 12px 16px;
+  margin: 24px 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
 }
 
 /* ═══════════════════════════════════════
