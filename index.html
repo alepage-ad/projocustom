@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJO Custom — Broderie, DTF, Étiquettes &amp; Packaging sur-mesure</title>
+  <meta name="description" content="PROJO Custom, atelier de customisation textile pour entreprises, associations et clubs sportifs. Broderie, DTF, étiquettes et packaging sur-mesure. Demandez votre devis gratuit.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       SECTION 1 — NAV
+  ══════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#accueil" aria-label="Accueil PROJO Custom">
+          <img src="assets/images/Logo_Projo_fond_blanc.png" alt="PROJO Custom" class="nav__logo" loading="lazy">
+        </a>
+        <ul class="nav__links">
+          <li><a href="#techniques">Techniques</a></li>
+          <li><a href="#galerie">Réalisations</a></li>
+          <li><a href="#pourquoi">Pourquoi nous</a></li>
+          <li><a href="#formulaire">Devis</a></li>
+        </ul>
+        <a href="#formulaire" class="btn-primary nav__cta">Demander un devis</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile plein écran -->
+    <div class="nav__mobile-overlay" id="mobile-overlay" aria-hidden="true" role="dialog" aria-label="Menu de navigation">
+      <button class="nav__mobile-close" id="mobile-close" aria-label="Fermer le menu">&times;</button>
+      <ul class="nav__mobile-links">
+        <li><a href="#techniques">Techniques</a></li>
+        <li><a href="#galerie">Réalisations</a></li>
+        <li><a href="#pourquoi">Pourquoi nous</a></li>
+        <li><a href="#formulaire">Devis</a></li>
+      </ul>
+      <a href="#formulaire" class="btn-outline">Demander un devis</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       SECTION 2 — HERO
+  ══════════════════════════════ -->
+  <header class="hero" id="accueil">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Votre identité. Sur chaque vêtement.</h1>
+          <p class="hero__subtitle">Broderie, DTF, étiquettes et packaging sur-mesure pour entreprises, associations et clubs sportifs.</p>
+          <div class="hero__ctas">
+            <a href="#formulaire" class="btn-primary">Demander un devis</a>
+            <a href="#galerie" class="hero__link">Voir nos réalisations →</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__placeholder">[Photo à venir]</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════
+       SECTION 3 — IMAGE SCROLL
+  ══════════════════════════════ -->
+  <section class="image-scroll" id="galerie" aria-label="Galerie de réalisations">
+    <div class="image-scroll__track">
+      <div class="image-scroll__item image-scroll__item--1">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--2">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--3">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--4">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--5">[Photo à venir]</div>
+      <!-- Duplicates pour boucle CSS seamless -->
+      <div class="image-scroll__item image-scroll__item--1" aria-hidden="true">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--2" aria-hidden="true">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--3" aria-hidden="true">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--4" aria-hidden="true">[Photo à venir]</div>
+      <div class="image-scroll__item image-scroll__item--5" aria-hidden="true">[Photo à venir]</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 4 — PROMESSE (fifty-fifty)
+  ══════════════════════════════ -->
+  <section class="fifty-fifty" id="promesse">
+    <div class="container">
+      <div class="fifty-fifty__inner">
+        <div class="fifty-fifty__content">
+          <h2 class="fifty-fifty__title">Qualité garantie. Livraison assurée.</h2>
+          <p class="fifty-fifty__body">Que vous commandiez 20 ou 2000 pièces, chaque ordre bénéficie du même niveau d'exigence — de la maquette validée à la livraison finale.</p>
+          <div class="fifty-fifty__ctas">
+            <a href="#formulaire" class="btn-primary">Demander un devis</a>
+            <a href="METTRE_URL_CALENDLY" class="btn-secondary" target="_blank" rel="noopener noreferrer">Parler à un expert</a>
+          </div>
+        </div>
+        <div class="fifty-fifty__visual">
+          <div class="fifty-fifty__placeholder">[Photo à venir]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 5 — NOS TECHNIQUES
+  ══════════════════════════════ -->
+  <section class="techniques" id="techniques">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Nos techniques</h2>
+        <p class="section__subtitle">Quatre savoir-faire maîtrisés en interne pour des finitions professionnelles sur tous supports.</p>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card__image card__image--broderie">[Photo à venir]</div>
+          <div class="card__body">
+            <h3 class="card__title">Broderie</h3>
+            <p class="card__accroche">Rendu premium, tenue dans le temps</p>
+            <p class="card__description">Idéal pour logos, uniformes et polos d'entreprise. Fil résistant, relief distinctif.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image card__image--dtf">[Photo à venir]</div>
+          <div class="card__body">
+            <h3 class="card__title">DTF</h3>
+            <p class="card__accroche">Impression HD sur tous textiles</p>
+            <p class="card__description">Couleurs vives, détails fins, petites séries acceptées. Aucune contrainte de couleur.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image card__image--etiquettes">[Photo à venir]</div>
+          <div class="card__body">
+            <h3 class="card__title">Étiquettes</h3>
+            <p class="card__accroche">Votre marque jusqu'au moindre détail</p>
+            <p class="card__description">Étiquettes tissées ou imprimées à vos couleurs. Finition professionnelle, coupe nette.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image card__image--packaging">[Photo à venir]</div>
+          <div class="card__body">
+            <h3 class="card__title">Packaging</h3>
+            <p class="card__accroche">L'emballage aussi fait partie de l'image</p>
+            <p class="card__description">Sacs, boîtes et emballages personnalisés. Du produit à la livraison, une identité cohérente.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 6 — CHIFFRES CLÉS
+  ══════════════════════════════ -->
+  <section class="stats" id="pourquoi">
+    <div class="container">
+      <h2 class="stats__title">Ils nous font confiance</h2>
+      <div class="stats__grid">
+        <div class="stat">
+          <span class="stat__number">500+</span>
+          <p class="stat__label">organisations accompagnées</p>
+        </div>
+        <div class="stat">
+          <span class="stat__number">4</span>
+          <p class="stat__label">techniques maîtrisées</p>
+        </div>
+        <div class="stat">
+          <span class="stat__number">100%</span>
+          <p class="stat__label">made in France</p>
+        </div>
+      </div>
+      <div class="stats__tags" aria-label="Types d'organisations">
+        <span class="stats__tag">Entreprises</span>
+        <span class="stats__tag">Associations</span>
+        <span class="stats__tag">Clubs sportifs</span>
+        <span class="stats__tag">Universités</span>
+        <span class="stats__tag">Événements</span>
+        <span class="stats__tag">Collectivités</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 7 — PROCESS
+  ══════════════════════════════ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Comment ça marche</h2>
+      </div>
+      <div class="process__steps">
+        <div class="step">
+          <span class="step__number" aria-hidden="true">01</span>
+          <h3 class="step__title">Brief</h3>
+          <p class="step__description">Décrivez votre projet via le formulaire ou par téléphone. Technique, support, quantité, délai.</p>
+        </div>
+        <div class="step">
+          <span class="step__number" aria-hidden="true">02</span>
+          <h3 class="step__title">Maquette</h3>
+          <p class="step__description">Nous vous soumettons un bon à tirer. Aucune production sans votre validation écrite.</p>
+        </div>
+        <div class="step">
+          <span class="step__number" aria-hidden="true">03</span>
+          <h3 class="step__title">Production</h3>
+          <p class="step__description">Fabrication dans notre atelier. Contrôle qualité à chaque étape du processus.</p>
+        </div>
+        <div class="step">
+          <span class="step__number" aria-hidden="true">04</span>
+          <h3 class="step__title">Livraison</h3>
+          <p class="step__description">Expédition sécurisée. Vous recevez exactement ce que vous avez validé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 8 — SECTEURS
+  ══════════════════════════════ -->
+  <section class="secteurs" id="secteurs">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Votre secteur, votre customisation</h2>
+        <p class="section__subtitle">Chaque organisation a ses contraintes et son identité. Nous les connaissons.</p>
+      </div>
+      <div class="secteur-grid">
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">🏢</span>
+          <h3 class="secteur-card__title">Entreprises</h3>
+          <p class="secteur-card__description">Uniformes, vêtements de travail, goodies corporate</p>
+        </div>
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">🤝</span>
+          <h3 class="secteur-card__title">Associations</h3>
+          <p class="secteur-card__description">Tenues membres, événements, visibilité terrain</p>
+        </div>
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">⚽</span>
+          <h3 class="secteur-card__title">Clubs sportifs</h3>
+          <p class="secteur-card__description">Maillots, survêtements, équipement personnalisé</p>
+        </div>
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">🎓</span>
+          <h3 class="secteur-card__title">Universités / BDE</h3>
+          <p class="secteur-card__description">Collections étudiantes, intégrations, événements</p>
+        </div>
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">🎪</span>
+          <h3 class="secteur-card__title">Événements</h3>
+          <p class="secteur-card__description">Staff, bénévoles, éditions limitées</p>
+        </div>
+
+        <div class="secteur-card">
+          <span class="secteur-card__icon" aria-hidden="true">🏛️</span>
+          <h3 class="secteur-card__title">Collectivités</h3>
+          <p class="secteur-card__description">Agents, services publics, communication locale</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 9 — FORMULAIRE
+  ══════════════════════════════ -->
+  <section class="formulaire-section" id="formulaire">
+    <div class="container">
+      <div class="formulaire-section__header">
+        <h2 class="formulaire-section__title">Demandez votre devis</h2>
+        <p class="formulaire-section__subtitle">Réponse sous 48h. Aucun engagement.</p>
+      </div>
+
+      <div class="formulaire-section__inner">
+
+        <!-- Formulaire -->
+        <div class="formulaire-section__form">
+          <form name="devis" data-netlify="true" method="POST" action="/merci" class="devis-form" id="devis-form" novalidate>
+            <input type="hidden" name="form-name" value="devis">
+
+            <div class="form-field" id="field-nom">
+              <input type="text" name="nom" placeholder="Nom / Prénom" required>
+              <span class="field__error-msg">Veuillez renseigner votre nom.</span>
+            </div>
+
+            <div class="form-field" id="field-organisation">
+              <input type="text" name="organisation" placeholder="Entreprise / Association" required>
+              <span class="field__error-msg">Veuillez renseigner votre organisation.</span>
+            </div>
+
+            <div class="form-field" id="field-email">
+              <input type="email" name="email" placeholder="Email professionnel" required>
+              <span class="field__error-msg">Veuillez renseigner un email valide.</span>
+            </div>
+
+            <div class="form-field" id="field-telephone">
+              <input type="tel" name="telephone" placeholder="Téléphone (optionnel)">
+            </div>
+
+            <div class="form-field" id="field-technique">
+              <select name="technique" required>
+                <option value="">Technique souhaitée</option>
+                <option>Broderie</option>
+                <option>DTF</option>
+                <option>Étiquettes</option>
+                <option>Packaging</option>
+                <option>Plusieurs techniques</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+              <span class="field__error-msg">Veuillez choisir une technique.</span>
+            </div>
+
+            <div class="form-field" id="field-quantite">
+              <select name="quantite" required>
+                <option value="">Quantité estimée</option>
+                <option>Moins de 50 pièces</option>
+                <option>50 à 200 pièces</option>
+                <option>200 à 500 pièces</option>
+                <option>Plus de 500 pièces</option>
+              </select>
+              <span class="field__error-msg">Veuillez estimer la quantité.</span>
+            </div>
+
+            <div class="form-field" id="field-delai">
+              <select name="delai">
+                <option value="">Délai souhaité</option>
+                <option>Urgent — moins de 2 semaines</option>
+                <option>Standard</option>
+                <option>Pas de contrainte</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="field-description">
+              <textarea name="description" placeholder="Décrivez votre projet : type de vêtement, visuel, couleurs, contexte d'utilisation..." required></textarea>
+              <span class="field__error-msg">Veuillez décrire votre projet.</span>
+            </div>
+
+            <button type="submit" class="btn-primary">Envoyer ma demande</button>
+          </form>
+
+          <p class="form-separator">— ou —</p>
+          <div class="form-calendly">
+            <a href="METTRE_URL_CALENDLY" class="btn-secondary" target="_blank" rel="noopener noreferrer">Réserver un appel de 20 min</a>
+          </div>
+        </div>
+
+        <!-- Réassurance -->
+        <div class="formulaire-section__reassurance">
+          <div class="reassurance">
+            <h3 class="reassurance__title">Pourquoi nous choisir ?</h3>
+            <div class="reassurance__item">
+              <span class="reassurance__icon" aria-hidden="true">✓</span>
+              <span>Devis 100% gratuit</span>
+            </div>
+            <div class="reassurance__item">
+              <span class="reassurance__icon" aria-hidden="true">✓</span>
+              <span>Réponse sous 48h</span>
+            </div>
+            <div class="reassurance__item">
+              <span class="reassurance__icon" aria-hidden="true">✓</span>
+              <span>Expert dédié à votre projet</span>
+            </div>
+            <div class="reassurance__item">
+              <span class="reassurance__icon" aria-hidden="true">✓</span>
+              <span>Toutes quantités acceptées</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 10 — FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" id="footer">
+
+    <!-- CTA final -->
+    <div class="footer-cta">
+      <div class="container">
+        <h2 class="footer-cta__title">Prêt à lancer votre projet ?</h2>
+        <p class="footer-cta__subtitle">Décrivez-nous votre besoin. On s'occupe du reste.</p>
+        <a href="#formulaire" class="btn-outline">Demander un devis</a>
+      </div>
+    </div>
+
+    <!-- Footer bas -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__grid">
+
+          <div class="footer-col">
+            <img src="assets/images/Logo_Projo_fond_noir.png" alt="PROJO Custom" class="footer-col__logo" loading="lazy">
+            <p class="footer-col__baseline">L'atelier customisation textile de PROJO</p>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col__heading">Navigation</p>
+            <ul class="footer-col__links">
+              <li><a href="#techniques">Techniques</a></li>
+              <li><a href="#galerie">Réalisations</a></li>
+              <li><a href="#pourquoi">Pourquoi nous</a></li>
+              <li><a href="#formulaire">Devis</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col__heading">Contact</p>
+            <div class="footer-col__contact">
+              <a href="mailto:contact@projostore.com">contact@projostore.com</a>
+              <a href="METTRE_URL_CALENDLY" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+              <div class="footer-social">
+                <a href="#" aria-label="Instagram PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="3"/>
+                    <line x1="8" y1="11" x2="8" y2="16"/>
+                    <line x1="8" y1="8" x2="8" y2="8.5"/>
+                    <line x1="12" y1="16" x2="12" y2="11"/>
+                    <path d="M12 13.5a2.5 2.5 0 0 1 5 0V16"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-legal">
+          <span>© 2026 Animus Corp — projocustom.com</span>
+          <div class="footer-legal__links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
