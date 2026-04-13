@@ -13,7 +13,7 @@
 :root {
   --color-primary:   #9D84C7;
   --color-secondary: #94D6F2;
-  --color-bg:        #F4F4F4;
+  --color-bg:        #DDDED6;
   --color-nav:       #DDDED6;
   --color-text:      #1A1A1A;
   --color-white:     #FFFFFF;
@@ -606,7 +606,7 @@ ul {
 .step__description {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: #666;
+  color: #444;
   line-height: 1.7;
 }
 
@@ -651,7 +651,7 @@ ul {
 .secteur-card__description {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: #666;
+  color: #444;
   line-height: 1.6;
 }
 
@@ -1156,7 +1156,7 @@ ul {
 .hero__catalogue p {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: #666;
+  color: #444;
   margin: 0 0 6px;
   line-height: 1.5;
 }
@@ -1196,7 +1196,7 @@ ul {
   gap: 10px;
   font-family: var(--font-body);
   font-size: 0.875rem;
-  color: #666;
+  color: #444;
   cursor: pointer;
   line-height: 1.5;
 }
