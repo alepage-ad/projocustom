@@ -7,6 +7,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Ayr Eighties Aesthetic';
+  src: url('assets/fonts/AyrEigtiesAesthetic-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
 /* ═══════════════════════════════════════
    2. Variables
 ═══════════════════════════════════════ */
@@ -17,8 +23,9 @@
   --color-nav:       #DDDED6;
   --color-text:      #1A1A1A;
   --color-white:     #FFFFFF;
-  --font-heading: 'VHS-Gothic', sans-serif;
-  --font-body:    Helvetica, Arial, sans-serif;
+  --font-heading:  'VHS-Gothic', sans-serif;
+  --font-display:  'Ayr Eighties Aesthetic', sans-serif;
+  --font-body:     Helvetica, Arial, sans-serif;
 }
 
 /* ═══════════════════════════════════════
