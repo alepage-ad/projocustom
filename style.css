@@ -8,8 +8,8 @@
 }
 
 @font-face {
-  font-family: 'Ginger Bots';
-  src: url('assets/fonts/GingerBots.woff2') format('woff2');
+  font-family: 'Ayr Eighties Aesthetic';
+  src: url('assets/fonts/AyrEigtiesAesthetic-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -24,7 +24,7 @@
   --color-text:      #1A1A1A;
   --color-white:     #FFFFFF;
   --font-heading:  'VHS-Gothic', sans-serif;
-  --font-display:  'Ginger Bots', sans-serif;
+  --font-display:  'Ayr Eighties Aesthetic', sans-serif;
   --font-body:     Helvetica, Arial, sans-serif;
 }
 
