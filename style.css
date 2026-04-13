@@ -48,6 +48,11 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #94D6F2;
 }
 
 img {
@@ -77,8 +82,9 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: #8a6fb8;
-  border-color: #8a6fb8;
+  background-color: #94D6F2;
+  border-color: #94D6F2;
+  color: #1A1A1A;
   transform: translateY(-2px);
 }
 
@@ -97,8 +103,8 @@ ul {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  border-color: #94D6F2;
+  color: #94D6F2;
   transform: translateY(-2px);
 }
 
@@ -117,8 +123,9 @@ ul {
 }
 
 .btn-outline:hover {
-  background-color: transparent;
-  color: var(--color-white);
+  background-color: #94D6F2;
+  border-color: #94D6F2;
+  color: #1A1A1A;
   transform: translateY(-2px);
 }
 
@@ -147,6 +154,7 @@ ul {
 }
 
 .nav.is-scrolled {
+  background-color: var(--color-bg);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -176,7 +184,7 @@ ul {
 }
 
 .nav__links a:hover {
-  color: var(--color-primary);
+  color: #94D6F2;
 }
 
 .nav__cta {
@@ -802,7 +810,7 @@ ul {
 
 /* ── FOOTER ── */
 .footer-cta {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, #9D84C7 0%, #94D6F2 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -870,7 +878,7 @@ ul {
 }
 
 .footer-col__links a:hover {
-  color: var(--color-white);
+  color: #94D6F2;
 }
 
 .footer-col__contact {
@@ -887,7 +895,7 @@ ul {
 }
 
 .footer-col__contact a:hover {
-  color: var(--color-white);
+  color: #94D6F2;
 }
 
 .footer-social {
@@ -904,7 +912,7 @@ ul {
 }
 
 .footer-social a:hover {
-  color: var(--color-white);
+  color: #94D6F2;
 }
 
 .footer-legal {
@@ -931,7 +939,7 @@ ul {
 }
 
 .footer-legal__links a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #94D6F2;
 }
 
 /* ── MERCI PAGE ── */
@@ -1158,11 +1166,11 @@ ul {
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .hero__catalogue a:hover {
-  opacity: 0.75;
+  color: #94D6F2;
 }
 
 /* ── PROMESSE FRANCE BADGE ── */
