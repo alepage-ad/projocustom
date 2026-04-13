@@ -14,6 +14,7 @@
   --color-primary:   #9D84C7;
   --color-secondary: #94D6F2;
   --color-bg:        #F4F4F4;
+  --color-nav:       #DDDED6;
   --color-text:      #1A1A1A;
   --color-white:     #FFFFFF;
   --font-heading: 'VHS-Gothic', sans-serif;
@@ -148,13 +149,13 @@ ul {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: var(--color-white);
+  background-color: var(--color-nav);
   padding: 14px 0;
   transition: box-shadow 0.3s ease;
 }
 
 .nav.is-scrolled {
-  background-color: var(--color-bg);
+  background-color: var(--color-nav);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -184,7 +185,7 @@ ul {
 }
 
 .nav__links a:hover {
-  color: #94D6F2;
+  color: var(--color-primary);
 }
 
 .nav__cta {
