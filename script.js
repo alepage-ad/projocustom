@@ -121,3 +121,47 @@ document.querySelectorAll('.devis-form select').forEach(select => {
   update();
   select.addEventListener('change', update);
 });
+
+/* ═══════════════════════════════════════
+   4. WHATSAPP WIDGET
+═══════════════════════════════════════ */
+const waFab    = document.getElementById('wa-fab');
+const waBubble = document.getElementById('wa-bubble');
+const waClose  = document.getElementById('wa-close');
+
+if (waFab && waBubble) {
+  function openWa() {
+    waBubble.classList.add('is-open');
+    waBubble.setAttribute('aria-hidden', 'false');
+    waFab.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeWa() {
+    waBubble.classList.remove('is-open');
+    waBubble.setAttribute('aria-hidden', 'true');
+    waFab.setAttribute('aria-expanded', 'false');
+  }
+
+  waFab.addEventListener('click', e => {
+    e.stopPropagation();
+    if (waBubble.classList.contains('is-open')) {
+      closeWa();
+    } else {
+      openWa();
+    }
+  });
+
+  if (waClose) {
+    waClose.addEventListener('click', e => {
+      e.stopPropagation();
+      closeWa();
+    });
+  }
+
+  document.addEventListener('click', e => {
+    const widget = document.getElementById('wa-widget');
+    if (widget && !widget.contains(e.target)) {
+      closeWa();
+    }
+  });
+}

@@ -987,13 +987,19 @@ ul {
   opacity: 0.7;
 }
 
-/* ── WHATSAPP FAB ── */
-.whatsapp-btn,
-.whatsapp-fab {
+/* ── WHATSAPP WIDGET ── */
+.wa-widget {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.wa-fab {
   width: 56px;
   height: 56px;
   background-color: #25D366;
@@ -1004,47 +1010,168 @@ ul {
   color: #FFFFFF;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.whatsapp-btn:hover,
-.whatsapp-fab:hover {
+.wa-fab:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
 }
 
-.whatsapp-btn__tooltip,
-.whatsapp-fab__tooltip {
-  position: absolute;
-  right: 68px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #1A1A1A;
+.wa-bubble {
+  width: 300px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.wa-bubble.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.wa-bubble__header {
+  background-color: #25D366;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wa-bubble__identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-bubble__avatar {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.wa-bubble__name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.wa-bubble__status {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.wa-bubble__close {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.wa-bubble__close:hover {
+  opacity: 1;
+}
+
+.wa-bubble__body {
+  padding: 16px;
+  background-color: #F0F0F0;
+}
+
+.wa-bubble__msg {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #1A1A1A;
+  line-height: 1.5;
+  margin: 0;
+  background-color: #FFFFFF;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.wa-bubble__footer {
+  padding: 12px 16px;
+  border-top: 1px solid #EEEEEE;
+}
+
+.wa-bubble__cta {
+  display: block;
+  text-align: center;
+  background-color: #25D366;
   color: #FFFFFF;
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  white-space: nowrap;
-  padding: 6px 12px;
-  border-radius: 6px;
-  pointer-events: none;
-  opacity: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.wa-bubble__cta:hover {
+  background-color: #1EBE58;
+}
+
+/* ── HERO CATALOGUE TEASER ── */
+.hero__catalogue {
+  margin-top: 20px;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.hero__catalogue p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+
+.hero__catalogue a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
-.whatsapp-btn__tooltip::after,
-.whatsapp-fab__tooltip::after {
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 5px solid transparent;
-  border-left-color: #1A1A1A;
+.hero__catalogue a:hover {
+  opacity: 0.75;
 }
 
-.whatsapp-btn:hover .whatsapp-btn__tooltip,
-.whatsapp-fab:hover .whatsapp-fab__tooltip {
-  opacity: 1;
+/* ── PROMESSE FRANCE BADGE ── */
+.promesse__france {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 20px;
 }
 
 /* ── RGPD CHECKBOX ── */
