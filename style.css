@@ -357,15 +357,24 @@ h1, h2 {
 
 .image-scroll__item {
   width: 400px;
-  height: 280px;
+  height: 500px;
   flex-shrink: 0;
   border-radius: 8px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.7);
   font-family: var(--font-body);
   font-size: 0.85rem;
+}
+
+.image-scroll__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .image-scroll__item--1 { background: linear-gradient(135deg, #9D84C7 0%, #94D6F2 100%); }
@@ -1428,6 +1437,7 @@ h1, h2 {
   }
   .card-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
   }
   .secteur-grid {
     grid-template-columns: repeat(3, 1fr);
