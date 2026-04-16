@@ -1448,6 +1448,9 @@ h1, h2 {
     justify-content: space-between;
     align-items: center;
   }
+  .footer-legal__links {
+    padding-right: 80px;
+  }
 }
 
 /* ═══════════════════════════════════════
