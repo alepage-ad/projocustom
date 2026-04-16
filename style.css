@@ -493,6 +493,7 @@ h1, h2 {
 }
 
 .card__image {
+  position: relative;
   width: 100%;
   height: 240px !important;
   min-height: 240px;
@@ -503,6 +504,8 @@ h1, h2 {
 }
 
 .card__image img {
+  position: absolute;
+  inset: 0;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
@@ -1511,7 +1514,7 @@ h1, h2 {
 }
 
 .digitalisation-band__label {
-  font-family: var(--font-body);
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -1529,6 +1532,6 @@ h1, h2 {
 }
 
 @media (min-width: 768px) {
-  .digitalisation-band { height: 480px; }
+  .digitalisation-band { height: 550px; }
   .digitalisation-band__text { font-size: 2.2rem; }
 }
