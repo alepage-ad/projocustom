@@ -348,8 +348,12 @@
 
         <!-- Formulaire -->
         <div class="formulaire-section__form">
-          <form name="devis" method="POST" action="/merci" class="devis-form" id="devis-form" novalidate>
+          <form name="devis" method="POST" action="https://api.web3forms.com/submit" class="devis-form" id="devis-form" novalidate>
             <input type="hidden" name="form-name" value="devis">
+            <input type="hidden" name="access_key" value="f844945e-36aa-44e5-ae15-af3641987501">
+            <input type="hidden" name="subject" value="Nouveau devis — projocustom.com">
+            <input type="hidden" name="redirect" value="https://alepage-ad.github.io/projocustom/merci.html">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
             <div class="form-field" id="field-nom">
               <input type="text" name="nom" placeholder="Nom / Prénom" required>
