@@ -495,18 +495,17 @@ h1, h2 {
 .card__image {
   width: 100%;
   height: 240px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
 }
 
-img.card__image {
+.card__image img {
   width: 100%;
-  height: 240px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -1369,7 +1368,6 @@ img.card__image {
     grid-template-columns: repeat(2, 1fr);
   }
   .card__image { height: 260px; }
-  img.card__image { height: 260px; }
 
   /* Stats */
   .stats__grid {
@@ -1460,7 +1458,6 @@ img.card__image {
     gap: 16px;
   }
   .card__image { height: 280px; }
-  img.card__image { height: 280px; }
   .secteur-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1478,24 +1475,58 @@ img.card__image {
   }
 }
 
-/* ── STEP IMAGE ── */
-.step__image {
-  margin-top: 20px;
-  border-radius: 8px;
+/* ── DIGITALISATION BAND ── */
+.digitalisation-band {
+  position: relative;
+  width: 100%;
+  height: 320px;
   overflow: hidden;
 }
-.step__image img {
+
+.digitalisation-band__image {
   width: 100%;
-  height: 160px;
+  height: 100%;
+}
+
+.digitalisation-band__image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
-  border-radius: 8px;
-  opacity: 0.92;
+  filter: brightness(0.55);
+}
+
+.digitalisation-band__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  gap: 12px;
+}
+
+.digitalisation-band__label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.digitalisation-band__text {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
-  .step__image img {
-    height: 180px;
-  }
+  .digitalisation-band { height: 380px; }
+  .digitalisation-band__text { font-size: 2.2rem; }
 }

@@ -134,7 +134,9 @@
       <div class="card-grid">
 
         <article class="card">
-          <img src="assets/images/brodeuse-2.jpg" alt="Machine à broder en atelier PROJO Custom" class="card__image" loading="lazy" style="object-fit:cover;">
+          <div class="card__image">
+            <img src="assets/images/brodeuse-2.jpg" alt="Machine à broder en atelier PROJO Custom" loading="lazy">
+          </div>
           <div class="card__body">
             <h3 class="card__title">Broderie</h3>
             <p class="card__accroche">Rendu premium, tenue dans le temps</p>
@@ -143,7 +145,9 @@
         </article>
 
         <article class="card">
-          <img src="assets/images/dtf-1.jpg" alt="Impression DTF sur textile" class="card__image" loading="lazy" style="object-fit:cover;">
+          <div class="card__image">
+            <img src="assets/images/dtf-1.jpg" alt="Impression DTF sur textile" loading="lazy">
+          </div>
           <div class="card__body">
             <h3 class="card__title">DTF (Direct To Film)</h3>
             <p class="card__accroche">Impression HD sur tous textiles</p>
@@ -152,7 +156,9 @@
         </article>
 
         <article class="card">
-          <img src="assets/images/real-zoro.png" alt="Patch personnalisé Zoro brodé sur t-shirt" class="card__image" loading="lazy" style="object-fit:cover;">
+          <div class="card__image">
+            <img src="assets/images/real-zoro.png" alt="Patch personnalisé Zoro brodé sur t-shirt" loading="lazy">
+          </div>
           <div class="card__body">
             <h3 class="card__title">Patch</h3>
             <p class="card__accroche">Votre marque jusqu'au moindre détail</p>
@@ -218,15 +224,10 @@
           <h3 class="step__title">Brief</h3>
           <p class="step__description">Décrivez votre projet via le formulaire ou par téléphone. Technique, support, quantité, délai.</p>
         </div>
-        <div class="step step--has-image">
+        <div class="step">
           <span class="step__number" aria-hidden="true">02</span>
           <h3 class="step__title">Maquette</h3>
           <p class="step__description">Nous vous soumettons un bon à tirer. Aucune production sans votre validation écrite.</p>
-          <div class="step__image">
-            <img src="assets/images/Digitalisation.jpeg"
-                 alt="Digitalisation du motif sur logiciel de broderie — étape de numérisation avant production"
-                 loading="lazy">
-          </div>
         </div>
         <div class="step">
           <span class="step__number" aria-hidden="true">03</span>
@@ -239,6 +240,20 @@
           <p class="step__description">Expédition sécurisée. Vous recevez exactement ce que vous avez validé.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="digitalisation-band">
+    <div class="digitalisation-band__image">
+      <img
+        src="assets/images/Digitalisation.jpeg"
+        alt="Numérisation du motif sur logiciel de broderie avant production"
+        loading="lazy"
+      >
+    </div>
+    <div class="digitalisation-band__overlay">
+      <p class="digitalisation-band__label">Étape clé</p>
+      <p class="digitalisation-band__text">Chaque motif numérisé.<br>Chaque détail validé.</p>
     </div>
   </section>
 
