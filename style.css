@@ -494,7 +494,8 @@ h1, h2 {
 
 .card__image {
   width: 100%;
-  height: 240px;
+  height: 240px !important;
+  min-height: 240px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -502,9 +503,9 @@ h1, h2 {
 }
 
 .card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
   object-position: center;
   display: block;
 }
@@ -1510,9 +1511,10 @@ h1, h2 {
 }
 
 .digitalisation-band__label {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-secondary);
   margin: 0;
@@ -1527,6 +1529,6 @@ h1, h2 {
 }
 
 @media (min-width: 768px) {
-  .digitalisation-band { height: 380px; }
+  .digitalisation-band { height: 480px; }
   .digitalisation-band__text { font-size: 2.2rem; }
 }
