@@ -1548,9 +1548,13 @@ h1, h2 {
 
 .legal-container h1 {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   margin-bottom: 8px;
   color: var(--color-text);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
 }
 
 .legal-update {
