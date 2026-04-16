@@ -1527,10 +1527,6 @@ h1, h2 {
 }
 
 @media (min-width: 768px) {
-  .digitalisation-band {
-    height: 380px;
-  }
-  .digitalisation-band__text {
-    font-size: 2.2rem;
-  }
+  .digitalisation-band { height: 380px; }
+  .digitalisation-band__text { font-size: 2.2rem; }
 }
