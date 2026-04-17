@@ -128,12 +128,28 @@ document.querySelectorAll('.devis-form select').forEach(select => {
 const waFab    = document.getElementById('wa-fab');
 const waBubble = document.getElementById('wa-bubble');
 const waClose  = document.getElementById('wa-close');
+const waInput  = document.getElementById('wa-input');
+const waSend   = document.getElementById('wa-send');
+const WA_BASE  = 'https://wa.me/33666525733';
+
+function updateSendLink() {
+  if (!waSend) return;
+  const msg = waInput ? waInput.value.trim() : '';
+  waSend.href = msg ? WA_BASE + '?text=' + encodeURIComponent(msg) : WA_BASE;
+}
+
+if (waInput) {
+  waInput.addEventListener('input', updateSendLink);
+}
+updateSendLink();
 
 if (waFab && waBubble) {
   function openWa() {
     waBubble.classList.add('is-open');
     waBubble.setAttribute('aria-hidden', 'false');
     waFab.setAttribute('aria-expanded', 'true');
+    updateSendLink();
+    if (waInput) setTimeout(() => waInput.focus(), 250);
   }
 
   function closeWa() {
@@ -144,11 +160,7 @@ if (waFab && waBubble) {
 
   waFab.addEventListener('click', e => {
     e.stopPropagation();
-    if (waBubble.classList.contains('is-open')) {
-      closeWa();
-    } else {
-      openWa();
-    }
+    waBubble.classList.contains('is-open') ? closeWa() : openWa();
   });
 
   if (waClose) {
@@ -160,8 +172,6 @@ if (waFab && waBubble) {
 
   document.addEventListener('click', e => {
     const widget = document.getElementById('wa-widget');
-    if (widget && !widget.contains(e.target)) {
-      closeWa();
-    }
+    if (widget && !widget.contains(e.target)) closeWa();
   });
 }
