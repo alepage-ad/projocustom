@@ -1637,15 +1637,15 @@ h1, h2 {
 }
 
 .logos-item img {
-  height: 40px;
+  height: 45px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(100%) opacity(55%);
+  filter: opacity(70%);
   transition: filter 0.35s ease;
 }
 
 .logos-item img:hover {
-  filter: grayscale(0%) opacity(100%);
+  filter: opacity(100%);
 }
 
 @keyframes scroll-logos {
@@ -1659,7 +1659,7 @@ h1, h2 {
     margin-top: 36px;
   }
   .logos-item img {
-    height: 30px;
+    height: 35px;
   }
   .logos-track {
     gap: 48px;
