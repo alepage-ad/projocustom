@@ -1039,7 +1039,8 @@ h1, h2 {
   gap: 12px;
 }
 
-.wa-fab {
+.wa-fab,
+.whatsapp-fab {
   width: 56px;
   height: 56px;
   background-color: #25D366;
@@ -1053,9 +1054,19 @@ h1, h2 {
   border: none;
   cursor: pointer;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
-.wa-fab:hover {
+/* whatsapp-fab est autonome (pas de parent .wa-widget) sur les autres pages */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+.wa-fab:hover,
+.whatsapp-fab:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
 }
