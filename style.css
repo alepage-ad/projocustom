@@ -1622,14 +1622,11 @@ h1, h2 {
   align-items: center;
   gap: 72px;
   width: max-content;
-  /* durée et animation injectées par JS pour correspondre à la vitesse du carrousel réalisations */
-}
-
-.logos-track:hover {
-  animation-play-state: paused;
 }
 
 .logos-item {
+  width: 130px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1637,10 +1634,9 @@ h1, h2 {
 }
 
 .logos-item img {
-  height: 56px;
-  width: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
   transition: transform 0.3s ease;
 }
 
@@ -1648,17 +1644,13 @@ h1, h2 {
   transform: scale(1.05);
 }
 
-@keyframes scroll-logos {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 @media (max-width: 768px) {
   .logos-track-wrapper {
     padding: 22px 0;
     margin-top: 36px;
   }
-  .logos-item img {
+  .logos-item {
+    width: 100px;
     height: 44px;
   }
   .logos-track {

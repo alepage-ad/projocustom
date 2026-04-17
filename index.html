@@ -607,7 +607,7 @@
         return div;
       }
 
-      // Measure one set width from the statically loaded logos
+      // Measure one set from statically loaded logos (images cached at this point)
       var oneSetWidth = track.scrollWidth;
       var vw = window.innerWidth;
       var setsNeeded = Math.max(2, Math.ceil(vw / oneSetWidth) + 1);
@@ -618,15 +618,24 @@
         logos.forEach(function (l) { track.appendChild(makeItem(l)); });
       }
 
-      // Clone first half as second half — garantit le saut invisible à -50%
+      // Mesurer AVANT le clone pour avoir la valeur pixel exacte
+      var firstHalfWidth = track.scrollWidth;
+
+      // Clone first half as second half
       Array.from(track.children).forEach(function (el) {
         track.appendChild(el.cloneNode(true));
       });
 
-      // Durée calculée pour correspondre à la vitesse du carrousel réalisations (78 px/s)
-      var firstHalfWidth = track.scrollWidth / 2;
-      var duration = (firstHalfWidth / 78).toFixed(1);
-      track.style.animation = 'scroll-logos ' + duration + 's linear infinite';
+      // Web Animations API avec px exact — élimine le saut du -50% CSS
+      var duration = Math.round(firstHalfWidth / 78 * 1000);
+      var anim = track.animate(
+        [{ transform: 'translateX(0px)' }, { transform: 'translateX(-' + firstHalfWidth + 'px)' }],
+        { duration: duration, iterations: Infinity, easing: 'linear' }
+      );
+
+      // Pause au hover (remplace animation-play-state CSS qui ne marche pas avec WAAPI)
+      track.addEventListener('mouseenter', function () { anim.pause(); });
+      track.addEventListener('mouseleave', function () { anim.play(); });
     });
   </script>
 </body>
