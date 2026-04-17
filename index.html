@@ -591,16 +591,16 @@
       if (!track) return;
 
       var logos = [
-        { src: 'assets/logo/Logo_Courir.png',    alt: 'Courir'   },
-        { src: 'assets/logo/Logo_NewEra.png',    alt: 'New Era'  },
-        { src: 'assets/logo/Logo-Gemo.png',      alt: 'Gémo'     },
-        { src: 'assets/logo/Logo_ADN.png',       alt: 'ADN'      },
-        { src: 'assets/logo/Logo_Carrefour.png', alt: 'Carrefour'}
+        { src: 'assets/logo/Logo_Courir.png',    alt: 'Courir',    large: true  },
+        { src: 'assets/logo/Logo_NewEra.png',    alt: 'New Era',   large: true  },
+        { src: 'assets/logo/Logo-Gemo.png',      alt: 'Gémo',      large: false },
+        { src: 'assets/logo/Logo_ADN.png',       alt: 'ADN',       large: false },
+        { src: 'assets/logo/Logo_Carrefour.png', alt: 'Carrefour', large: true  }
       ];
 
       function makeItem(l) {
         var div = document.createElement('div');
-        div.className = 'logos-item';
+        div.className = 'logos-item' + (l.large ? ' logos-item--large' : '');
         var img = document.createElement('img');
         img.src = l.src; img.alt = l.alt;
         div.appendChild(img);
@@ -618,22 +618,27 @@
         logos.forEach(function (l) { track.appendChild(makeItem(l)); });
       }
 
-      // Mesurer AVANT le clone pour avoir la valeur pixel exacte
+      // Mesurer AVANT le clone — firstHalfWidth = largeur exacte de la première moitié
       var firstHalfWidth = track.scrollWidth;
+      // Le gap CSS est appliqué entre le dernier item de la 1ère moitié et le 1er clone :
+      // la distance réelle d'une boucle = firstHalfWidth + gap
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 72;
+      var animDistance = firstHalfWidth + gap;
 
       // Clone first half as second half
       Array.from(track.children).forEach(function (el) {
         track.appendChild(el.cloneNode(true));
       });
 
-      // Web Animations API avec px exact — élimine le saut du -50% CSS
-      var duration = Math.round(firstHalfWidth / 78 * 1000);
+      // Web Animations API avec px exact — vitesse 15% plus lente que le carrousel réalisations
+      var speed = 78 * 0.85; // px/s
+      var duration = Math.round(animDistance / speed * 1000);
       var anim = track.animate(
-        [{ transform: 'translateX(0px)' }, { transform: 'translateX(-' + firstHalfWidth + 'px)' }],
+        [{ transform: 'translateX(0px)' }, { transform: 'translateX(-' + animDistance + 'px)' }],
         { duration: duration, iterations: Infinity, easing: 'linear' }
       );
 
-      // Pause au hover (remplace animation-play-state CSS qui ne marche pas avec WAAPI)
+      // Pause au hover
       track.addEventListener('mouseenter', function () { anim.pause(); });
       track.addEventListener('mouseleave', function () { anim.play(); });
     });
