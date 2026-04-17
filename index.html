@@ -18,7 +18,7 @@
     <div class="container">
       <div class="nav__inner">
         <a href="#accueil" aria-label="Accueil PROJO Custom">
-          <img src="assets/images/Logo_Projo_fond_blanc.png" alt="PROJO Custom" class="nav__logo" loading="lazy">
+          <img src="assets/logo/Logo_Projo_fond_blanc.png" alt="PROJO Custom" class="nav__logo" loading="lazy">
         </a>
         <ul class="nav__links">
           <li><a href="#techniques">Techniques</a></li>
@@ -488,7 +488,7 @@
         <div class="footer-bottom__grid">
 
           <div class="footer-col">
-            <img src="assets/images/Logo_Projo_fond_noir.png" alt="PROJO Custom" class="footer-col__logo" loading="lazy">
+            <img src="assets/logo/Logo_Projo_fond_noir.png" alt="PROJO Custom" class="footer-col__logo" loading="lazy">
             <p class="footer-col__baseline">L'atelier customisation textile de PROJO</p>
           </div>
 
@@ -591,16 +591,16 @@
       if (!track) return;
 
       var logos = [
-        { src: 'assets/logo/Logo_Courir.png',    alt: 'Courir',    large: true  },
-        { src: 'assets/logo/Logo_NewEra.png',    alt: 'New Era',   large: true  },
-        { src: 'assets/logo/Logo-Gemo.png',      alt: 'Gémo',      large: false },
-        { src: 'assets/logo/Logo_ADN.png',       alt: 'ADN',       large: false },
-        { src: 'assets/logo/Logo_Carrefour.png', alt: 'Carrefour', large: true  }
+        { src: 'assets/logo/Logo_Courir.png',    alt: 'Courir',    size: 'xlarge' },
+        { src: 'assets/logo/Logo_NewEra.png',    alt: 'New Era',   size: 'xlarge' },
+        { src: 'assets/logo/Logo-Gemo.png',      alt: 'Gémo',      size: ''       },
+        { src: 'assets/logo/Logo_ADN.png',       alt: 'ADN',       size: ''       },
+        { src: 'assets/logo/Logo_Carrefour.png', alt: 'Carrefour', size: 'large'  }
       ];
 
       function makeItem(l) {
         var div = document.createElement('div');
-        div.className = 'logos-item' + (l.large ? ' logos-item--large' : '');
+        div.className = 'logos-item' + (l.size ? ' logos-item--' + l.size : '');
         var img = document.createElement('img');
         img.src = l.src; img.alt = l.alt;
         div.appendChild(img);

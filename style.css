@@ -1638,6 +1638,11 @@ h1, h2 {
   height: 67px;
 }
 
+.logos-item--xlarge {
+  width: 187px;
+  height: 80px;
+}
+
 .logos-item img {
   width: 100%;
   height: 100%;
