@@ -1610,16 +1610,19 @@ h1, h2 {
 .logos-track-wrapper {
   overflow: hidden;
   width: 100%;
-  padding: 32px 0;
-  border-top: 1px solid #E5E5E5;
-  margin-top: 32px;
+  padding: 28px 0;
+  margin-top: 48px;
+  background: var(--color-bg);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
 .logos-track {
   display: flex;
-  gap: 64px;
+  align-items: center;
+  gap: 72px;
   width: max-content;
-  animation: scroll-logos 22s linear infinite;
+  animation: scroll-logos 28s linear infinite;
 }
 
 .logos-track:hover {
@@ -1634,11 +1637,11 @@ h1, h2 {
 }
 
 .logos-item img {
-  height: 36px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(100%) opacity(50%);
-  transition: filter 0.3s ease;
+  filter: grayscale(100%) opacity(55%);
+  transition: filter 0.35s ease;
 }
 
 .logos-item img:hover {
@@ -1651,11 +1654,15 @@ h1, h2 {
 }
 
 @media (max-width: 768px) {
+  .logos-track-wrapper {
+    padding: 22px 0;
+    margin-top: 36px;
+  }
   .logos-item img {
-    height: 28px;
+    height: 30px;
   }
   .logos-track {
-    gap: 40px;
-    animation-duration: 18s;
+    gap: 48px;
+    animation-duration: 20s;
   }
 }
