@@ -1622,7 +1622,7 @@ h1, h2 {
   align-items: center;
   gap: 72px;
   width: max-content;
-  animation: scroll-logos 28s linear infinite;
+  /* durée et animation injectées par JS pour correspondre à la vitesse du carrousel réalisations */
 }
 
 .logos-track:hover {
@@ -1663,6 +1663,5 @@ h1, h2 {
   }
   .logos-track {
     gap: 48px;
-    animation-duration: 20s;
   }
 }

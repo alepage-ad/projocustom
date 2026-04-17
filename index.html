@@ -622,6 +622,11 @@
       Array.from(track.children).forEach(function (el) {
         track.appendChild(el.cloneNode(true));
       });
+
+      // Durée calculée pour correspondre à la vitesse du carrousel réalisations (78 px/s)
+      var firstHalfWidth = track.scrollWidth / 2;
+      var duration = (firstHalfWidth / 78).toFixed(1);
+      track.style.animation = 'scroll-logos ' + duration + 's linear infinite';
     });
   </script>
 </body>
