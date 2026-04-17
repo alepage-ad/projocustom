@@ -209,17 +209,12 @@
         <span class="stats__tag">Collectivités</span>
       </div>
     </div>
-    <!-- Bandeau logos clients — pleine largeur -->
+    <!-- Bandeau logos clients — pleine largeur (dupliqué par JS) -->
     <div class="logos-track-wrapper" aria-label="Nos clients">
       <div class="logos-track">
         <div class="logos-item"><img src="assets/logo/Logo_Courir.png" alt="Courir"></div>
-        <div class="logos-item"><img src="assets/logo/Logo_NewEra.jpg" alt="New Era"></div>
-        <div class="logos-item"><img src="assets/logo/Logo-Gemo.jpg" alt="Gémo"></div>
-        <div class="logos-item"><img src="assets/logo/Logo_ADN.png" alt="ADN"></div>
-        <div class="logos-item"><img src="assets/logo/Logo_Carrefour.png" alt="Carrefour"></div>
-        <div class="logos-item"><img src="assets/logo/Logo_Courir.png" alt="Courir"></div>
-        <div class="logos-item"><img src="assets/logo/Logo_NewEra.jpg" alt="New Era"></div>
-        <div class="logos-item"><img src="assets/logo/Logo-Gemo.jpg" alt="Gémo"></div>
+        <div class="logos-item"><img src="assets/logo/Logo_NewEra.png" alt="New Era"></div>
+        <div class="logos-item"><img src="assets/logo/Logo-Gemo.png" alt="Gémo"></div>
         <div class="logos-item"><img src="assets/logo/Logo_ADN.png" alt="ADN"></div>
         <div class="logos-item"><img src="assets/logo/Logo_Carrefour.png" alt="Carrefour"></div>
       </div>
@@ -590,5 +585,44 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      var track = document.querySelector('.logos-track');
+      if (!track) return;
+
+      var logos = [
+        { src: 'assets/logo/Logo_Courir.png',    alt: 'Courir'   },
+        { src: 'assets/logo/Logo_NewEra.png',    alt: 'New Era'  },
+        { src: 'assets/logo/Logo-Gemo.png',      alt: 'Gémo'     },
+        { src: 'assets/logo/Logo_ADN.png',       alt: 'ADN'      },
+        { src: 'assets/logo/Logo_Carrefour.png', alt: 'Carrefour'}
+      ];
+
+      function makeItem(l) {
+        var div = document.createElement('div');
+        div.className = 'logos-item';
+        var img = document.createElement('img');
+        img.src = l.src; img.alt = l.alt;
+        div.appendChild(img);
+        return div;
+      }
+
+      // Measure one set width from the statically loaded logos
+      var oneSetWidth = track.scrollWidth;
+      var vw = window.innerWidth;
+      var setsNeeded = Math.max(2, Math.ceil(vw / oneSetWidth) + 1);
+
+      // Build first half
+      track.innerHTML = '';
+      for (var i = 0; i < setsNeeded; i++) {
+        logos.forEach(function (l) { track.appendChild(makeItem(l)); });
+      }
+
+      // Clone first half as second half — garantit le saut invisible à -50%
+      Array.from(track.children).forEach(function (el) {
+        track.appendChild(el.cloneNode(true));
+      });
+    });
+  </script>
 </body>
 </html>
