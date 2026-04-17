@@ -1063,12 +1063,33 @@ h1, h2 {
   bottom: 24px;
   right: 24px;
   z-index: 999;
+  overflow: visible;
 }
 
 .wa-fab:hover,
 .whatsapp-fab:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-fab__tooltip {
+  position: absolute;
+  right: 68px;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: #1A1A1A;
+  color: #fff;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-fab:hover .whatsapp-fab__tooltip {
+  opacity: 1;
 }
 
 .wa-bubble {
