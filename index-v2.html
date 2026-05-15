@@ -290,9 +290,18 @@
       border-radius: 12px;
       min-height: 140px;
       display: flex;
-      align-items: flex-end;
-      padding: 18px;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 12px 14px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .s03-vignette__img {
+      flex: 1;
+      width: 100%;
+      object-fit: contain;
+      min-height: 0;
     }
 
     .s03-vignette:hover {
@@ -304,6 +313,8 @@
       font-family: 'VHS-Gothic', sans-serif;
       font-size: 13px;
       color: #1A1A1A;
+      margin-top: 8px;
+      flex-shrink: 0;
     }
 
     /* C5 : lien catalogue */
@@ -893,15 +904,19 @@
         <span class="v2-label">Notre catalogue</span>
         <div class="s03-catalogue__grid">
           <div class="s03-vignette">
+            <img src="assets/images/Tshirt oversized blanc 1.webp" alt="T-shirts personnalisés" class="s03-vignette__img" loading="lazy">
             <span class="s03-vignette__label">T-shirts</span>
           </div>
           <div class="s03-vignette">
+            <img src="assets/images/Hoodie gris 1.webp" alt="Hoodies personnalisés" class="s03-vignette__img" loading="lazy">
             <span class="s03-vignette__label">Hoodies</span>
           </div>
           <div class="s03-vignette">
-            <span class="s03-vignette__label">Polos</span>
+            <img src="assets/images/Sweat Noir 1.webp" alt="Sweats personnalisés" class="s03-vignette__img" loading="lazy">
+            <span class="s03-vignette__label">Sweat</span>
           </div>
           <div class="s03-vignette">
+            <img src="assets/images/Casquette Noir 3.webp" alt="Accessoires personnalisés" class="s03-vignette__img" loading="lazy">
             <span class="s03-vignette__label">Accessoires</span>
           </div>
         </div>
