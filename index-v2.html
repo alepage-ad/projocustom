@@ -14,6 +14,12 @@
       background-color: #F4F4F4;
     }
 
+    /* ── C8 : container fluide 1280px ── */
+    .container {
+      max-width: 1280px;
+      padding: 0 clamp(16px, 4vw, 80px);
+    }
+
     /* ── C2 : bouton violet (CTA principal) ── */
     .btn-noir {
       display: inline-block;
@@ -55,7 +61,7 @@
        SECTION 01 — HERO V2 (C1 fifty-fifty)
     ════════════════════════════════════ */
     .hero-v2 {
-      background-color: #F4F4F4;
+      background-color: #DDDED6;
       padding-top: 66px;
       padding-bottom: 60px;
     }
@@ -89,17 +95,17 @@
 
     .hero-v2__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      line-height: 1.05;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.1;
       color: #1A1A1A;
       margin-bottom: 24px;
     }
 
     .hero-v2__subtitle {
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
       color: #555;
-      max-width: 680px;
+      max-width: 580px;
       line-height: 1.7;
       margin-bottom: 32px;
     }
@@ -224,9 +230,8 @@
 
     .s03__subtitle {
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 1.05rem;
+      font-size: 15px;
       color: #555;
-      max-width: 620px;
       line-height: 1.7;
     }
 
@@ -261,7 +266,7 @@
       font-family: Helvetica, Arial, sans-serif;
       font-size: 15px;
       font-weight: 700;
-      color: #1A1A1A;
+      color: #9D84C7;
       margin-bottom: 8px;
     }
 
@@ -336,9 +341,8 @@
 
     .s04__subtitle {
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 1.05rem;
+      font-size: 15px;
       color: #555;
-      max-width: 520px;
       line-height: 1.7;
     }
 
@@ -355,10 +359,10 @@
       gap: 10px;
     }
 
-    /* C11 : numéros process */
+    /* C6 : numéros process */
     .s04-step__number {
       font-family: 'VHS-Gothic', sans-serif;
-      font-size: 24px;
+      font-size: 48px;
       color: #9D84C7;
       opacity: 0.5;
       line-height: 1;
@@ -398,9 +402,8 @@
 
     .s05__subtitle {
       font-family: Helvetica, Arial, sans-serif;
-      font-size: 1.05rem;
+      font-size: 15px;
       color: #555;
-      max-width: 520px;
       line-height: 1.7;
     }
 
@@ -432,13 +435,14 @@
       display: block;
     }
 
-    /* C10+C12 : logos Courir/Gémo */
+    /* C7 : logos Courir/Gémo uniformisés */
     .s05-card__logo {
-      height: 70px;
+      height: 60px;
       width: auto;
       max-width: 200px;
       object-fit: contain;
       display: block;
+      margin-left: 0;
       margin-bottom: 14px;
       mix-blend-mode: darken;
     }
@@ -622,7 +626,7 @@
        MEDIA QUERIES V2
     ════════════════════════════════════ */
     @media (min-width: 768px) {
-      /* C1 : hero fifty-fifty desktop */
+      /* C1/C2/C3 : hero desktop — colonnes 55/45, stretch, fluide */
       .hero-v2 {
         padding-top: 66px;
         padding-bottom: 0;
@@ -630,37 +634,45 @@
 
       .hero-v2__inner {
         flex-direction: row;
-        align-items: center;
-        gap: 60px;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 48px;
         padding: 60px 0;
       }
 
       .hero-v2__visual {
         order: 0;
-        flex: 0 0 50%;
+        flex: 1 1 40%;
         width: auto;
         margin-left: 0;
-        height: 480px;
+        height: 100%;
+        min-height: 420px;
+        align-self: stretch;
         border-radius: 12px;
         overflow: hidden;
       }
 
+      .hero-v2__visual img {
+        height: 100%;
+      }
+
       .hero-v2__content {
-        flex: 1;
-        padding: 0;
+        flex: 1 1 52%;
+        padding: 40px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
-      /* C11 : numéros process 32px desktop */
+      /* C6 : numéros process 64px desktop */
       .s04-step__number {
-        font-size: 32px;
+        font-size: 64px;
       }
 
       /* Section 02 */
       .s02__inner {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-start;
         gap: 48px;
       }
@@ -723,25 +735,26 @@
       /* Section 06 */
       .s06__layout {
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-start;
         gap: 60px;
       }
 
       .s06__side-col {
-        flex: 0 0 300px;
+        flex: 1 1 28%;
+        min-width: 240px;
+        padding-top: 124px;
       }
 
-      /* C8 : "Plutôt direct ?" aligné avec le premier champ
-         H2 (~48px) + mb-12 + subtitle (~28px) + mb-36 = ~124px */
-      .s06__side-col {
-        padding-top: 124px;
+      .s06__form-col {
+        flex: 1 1 60%;
+        min-width: 300px;
       }
     }
 
     @media (min-width: 1440px) {
-      .hero-v2__content {
-        padding-left: 60px;
-        padding-right: 60px;
+      .hero-v2__inner {
+        gap: 64px;
       }
     }
   </style>
@@ -798,7 +811,7 @@
           <a href="#contact" class="btn-noir">Parler de votre projet</a>
           <a href="#realisations" class="hero-v2__link">Voir nos réalisations →</a>
         </div>
-        <p class="promesse__france">🇫🇷 Customisation réalisée en France, dans notre atelier.</p>
+        <p class="promesse__france">🇫🇷 Customisation réalisée en France.</p>
       </div>
       <div class="hero-v2__visual">
         <img src="assets/images/presse-1.jpg" alt="Atelier PROJO Custom — presse thermique DTF sur t-shirt" loading="eager">
