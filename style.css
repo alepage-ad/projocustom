@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'Quixote';
-  src: url('assets/fonts/Quixote-Regular.woff2') format('woff2'),
-       url('assets/fonts/Quixote-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ═══════════════════════════════════════
    1. @font-face
 ═══════════════════════════════════════ */
@@ -34,7 +25,7 @@
   --color-white:     #FFFFFF;
   --font-heading:  'VHS-Gothic', sans-serif;
   --font-display:  'Ayr Eighties Aesthetic', sans-serif;
-  --font-body:     'Quixote', Helvetica, Arial, sans-serif;
+  --font-body:     Helvetica, Arial, sans-serif;
 }
 
 /* ═══════════════════════════════════════
@@ -1540,7 +1531,7 @@ h1, h2 {
 }
 
 .digitalisation-band__label {
-  font-family: 'Quixote', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
