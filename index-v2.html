@@ -9,6 +9,13 @@
   <link rel="apple-touch-icon" href="assets/logo/Favicon Projo.jpeg">
   <link rel="stylesheet" href="style.css">
   <style>
+    @font-face {
+      font-family: 'Monoglyphic';
+      src: url('assets/fonts/Monoglyphic-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
     /* ── V2 : page background override ── */
     html, body {
       background-color: #F4F4F4;
@@ -51,7 +58,7 @@
       font-family: 'VHS-Gothic', sans-serif;
       display: inline-block;
       border: 1.5px solid #1A1A1A;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 6px 14px;
       background: #DDDED6;
       color: #1A1A1A;
@@ -74,7 +81,7 @@
       font-family: 'VHS-Gothic', sans-serif;
       display: inline-block;
       border: 1.5px solid #1A1A1A;
-      border-radius: 6px;
+      border-radius: 0;
       padding: 6px 14px;
       background: #DDDED6;
       color: #1A1A1A;
@@ -135,7 +142,7 @@
     }
 
     .hero-v2__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2.2rem, 3.5vw, 3.2rem);
       line-height: 1.1;
@@ -185,7 +192,7 @@
     }
 
     .s02__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.1;
@@ -220,36 +227,31 @@
       display: block;
     }
 
-    .s02__cards {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .s02__tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      flex: 1;
     }
 
-    .s02-card {
-      background-color: #DDDED6;
-      border-radius: 12px;
-      padding: 24px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .s02-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    .s02-card__title {
+    .s02-tech-card {
+      background-color: #1A1A1A;
+      color: #F4F4F4;
       font-family: 'VHS-Gothic', sans-serif;
       font-size: 1rem;
-      color: #1A1A1A;
-      margin-bottom: 8px;
+      border-radius: 0;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
     }
 
-    .s02-card__body {
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 0.92rem;
-      color: #555;
-      line-height: 1.65;
+    .s02-tech-card:hover {
+      background-color: #9D84C7;
     }
 
     /* ════════════════════════════════════
@@ -265,7 +267,7 @@
     }
 
     .s03__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
@@ -395,7 +397,7 @@
     }
 
     .s04__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
@@ -457,7 +459,7 @@
     }
 
     .s05__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
@@ -518,7 +520,7 @@
       object-fit: contain;
       display: block;
       margin: 0;
-      mix-blend-mode: multiply;
+      mix-blend-mode: darken;
     }
 
     .s05-card__name {
@@ -555,7 +557,7 @@
     }
 
     .s06__title {
-      font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-family: 'Monoglyphic', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
@@ -747,8 +749,8 @@
       /* Section 02 */
       .s02__inner {
         flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        flex-wrap: nowrap;
+        align-items: stretch;
         gap: 48px;
       }
 
@@ -757,11 +759,17 @@
       }
 
       .s02__photo img {
-        height: 480px;
+        height: 100%;
+        min-height: 380px;
+        object-fit: cover;
       }
 
-      .s02__cards {
-        flex: 1;
+      .s02__tech-grid {
+        align-content: stretch;
+      }
+
+      .s02-tech-card {
+        min-height: 120px;
       }
 
       /* Section 03 */
@@ -939,62 +947,12 @@
         <div class="s02__photo">
           <img src="assets/images/brodeuse-1.jpg" alt="Broderie en cours dans l'atelier PROJO Custom" loading="lazy">
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       SECTION 03 — CE QU'ON FAIT
-  ══════════════════════════════ -->
-  <section class="s03" id="techniques">
-    <div class="container">
-      <div class="s03__header">
-        <h2 class="s03__title">Ce qu'on fait</h2>
-        <p class="s03__subtitle">Quatre techniques maîtrisées en interne. Sur tous les vêtements de notre catalogue.</p>
-      </div>
-
-      <span class="v2-label">Techniques</span>
-      <div class="s03-grid">
-
-        <a href="#" class="s03-card s03-card--link">
-          <h3 class="s03-card__title">Nos broderies</h3>
-        </a>
-
-        <a href="#" class="s03-card s03-card--link">
-          <h3 class="s03-card__title">Nos DTF</h3>
-        </a>
-
-        <a href="#" class="s03-card s03-card--link">
-          <h3 class="s03-card__title">Nos Patchs</h3>
-        </a>
-
-        <a href="#" class="s03-card s03-card--link">
-          <h3 class="s03-card__title">Nos Packagings</h3>
-        </a>
-
-      </div>
-
-      <div style="margin-top: 64px;">
-        <span class="v2-label">Notre catalogue</span>
-        <div class="s03-catalogue__grid">
-          <div class="s03-vignette">
-            <img src="assets/images/Tshirt oversized blanc 1.webp" alt="T-shirts personnalisés" class="s03-vignette__img" loading="lazy">
-            <span class="s03-vignette__label">T-shirts</span>
-          </div>
-          <div class="s03-vignette">
-            <img src="assets/images/Hoodie gris 1.webp" alt="Hoodies personnalisés" class="s03-vignette__img" loading="lazy">
-            <span class="s03-vignette__label">Hoodies</span>
-          </div>
-          <div class="s03-vignette">
-            <img src="assets/images/Sweat Noir 1.webp" alt="Sweats personnalisés" class="s03-vignette__img" loading="lazy">
-            <span class="s03-vignette__label">Sweat</span>
-          </div>
-          <div class="s03-vignette">
-            <img src="assets/images/Casquette Noir 3.webp" alt="Accessoires personnalisés" class="s03-vignette__img" loading="lazy">
-            <span class="s03-vignette__label">Accessoires</span>
-          </div>
+        <div class="s02__tech-grid">
+          <a href="#" class="s02-tech-card">Nos broderies</a>
+          <a href="#" class="s02-tech-card">Nos DTF</a>
+          <a href="#" class="s02-tech-card">Nos Patchs</a>
+          <a href="#" class="s02-tech-card">Nos Packagings</a>
         </div>
-        <a href="#" class="s03__catalogue-link">Voir tout le catalogue →</a>
       </div>
     </div>
   </section>
@@ -1062,14 +1020,14 @@
 
         <article class="s05-card">
           <span class="s05-card__type">Influenceur</span>
-          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:14px;" loading="lazy">
+          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
           <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
           <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
         </article>
 
         <article class="s05-card">
           <span class="s05-card__type">Sportif · Association</span>
-          <img src="assets/images/Allan Saint Maximin.png" alt="Portrait Allan Saint-Maximin" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:14px;" loading="lazy">
+          <img src="assets/images/Allan Saint Maximin.png" alt="Portrait Allan Saint-Maximin" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
           <h3 class="s05-card__name">Allan Saint-Maximin · OVNI</h3>
           <p class="s05-card__desc">Textile personnalisé pour l'association OVNI, projet social du joueur de football.</p>
         </article>
