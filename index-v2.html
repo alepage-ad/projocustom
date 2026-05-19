@@ -72,9 +72,13 @@
     }
 
     .nav__links {
-      display: flex;
+      /* display géré par style.css (none mobile / flex desktop 768px+) */
       gap: 8px;
       align-items: center;
+    }
+
+    .nav__mobile-links {
+      gap: 12px;
     }
 
     .nav__mobile-links a {
@@ -234,12 +238,17 @@
       flex: 1;
     }
 
+    .s02__catalogue {
+      margin-top: 48px;
+    }
+
     .s02-tech-card {
-      background-color: #1A1A1A;
-      color: #F4F4F4;
+      background-color: #DDDED6;
+      color: #1A1A1A;
       font-family: 'VHS-Gothic', sans-serif;
       font-size: 1rem;
-      border-radius: 0;
+      border-radius: 12px;
+      border: 1.5px solid #1A1A1A;
       padding: 24px;
       display: flex;
       align-items: center;
@@ -247,11 +256,12 @@
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     .s02-tech-card:hover {
       background-color: #9D84C7;
+      color: #1A1A1A;
     }
 
     /* ════════════════════════════════════
@@ -509,6 +519,7 @@
     .s05-card__logo-wrap {
       display: flex;
       align-items: center;
+      justify-content: center;
       height: 120px;
       margin-bottom: 14px;
     }
@@ -703,6 +714,11 @@
        MEDIA QUERIES V2
     ════════════════════════════════════ */
     @media (min-width: 768px) {
+      /* Nav logo +20% desktop uniquement */
+      .nav__logo {
+        height: 46px;
+      }
+
       /* C1/C2/C3 : hero desktop — colonnes 55/45, stretch, fluide */
       .hero-v2 {
         padding-top: 66px;
@@ -842,6 +858,12 @@
       }
     }
 
+    /* ── Footer CTA : police Monoglyphic ── */
+    .footer-cta__title {
+      font-family: 'Monoglyphic', sans-serif;
+      font-weight: 400;
+    }
+
     /* ── Bandeau réalisations ── */
     .s-realisations {
       background-color: #1A1A1A;
@@ -953,6 +975,29 @@
           <a href="#" class="s02-tech-card">Nos Patchs</a>
           <a href="#" class="s02-tech-card">Nos Packagings</a>
         </div>
+      </div>
+
+      <div class="s02__catalogue">
+        <span class="v2-label">Notre catalogue</span>
+        <div class="s03-catalogue__grid">
+          <div class="s03-vignette" style="background-color:#FFFFFF;">
+            <img src="assets/images/Tshirt oversized blanc 1.webp" alt="T-shirts personnalisés" class="s03-vignette__img" loading="lazy">
+            <span class="s03-vignette__label">T-shirts</span>
+          </div>
+          <div class="s03-vignette" style="background-color:#FFFFFF;">
+            <img src="assets/images/Hoodie gris 1.webp" alt="Hoodies personnalisés" class="s03-vignette__img" loading="lazy">
+            <span class="s03-vignette__label">Hoodies</span>
+          </div>
+          <div class="s03-vignette" style="background-color:#FFFFFF;">
+            <img src="assets/images/Sweat Noir 1.webp" alt="Sweats personnalisés" class="s03-vignette__img" loading="lazy">
+            <span class="s03-vignette__label">Sweats</span>
+          </div>
+          <div class="s03-vignette" style="background-color:#FFFFFF;">
+            <img src="assets/images/Casquette Noir 3.webp" alt="Accessoires personnalisés" class="s03-vignette__img" loading="lazy">
+            <span class="s03-vignette__label">Accessoires</span>
+          </div>
+        </div>
+        <a href="#" class="s03__catalogue-link">Voir tout le catalogue →</a>
       </div>
     </div>
   </section>
