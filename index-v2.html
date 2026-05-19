@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROJO Custom — Atelier broderie &amp; DTF à Reims | Personnalisation textile sur-mesure</title>
   <meta name="description" content="Atelier de personnalisation textile à Reims. Broderie, DTF, patch, packaging. Une seule équipe, zéro intermédiaire. Devis gratuit sous 48h.">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/jpeg" href="assets/logo/Favicon Projo.jpeg">
+  <link rel="apple-touch-icon" href="assets/logo/Favicon Projo.jpeg">
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── V2 : page background override ── */
@@ -44,6 +44,47 @@
     /* C2 : btn-primary hover → texte blanc */
     .btn-primary:hover {
       color: #FFFFFF;
+    }
+
+    /* ── Nav links : style tags rétro ── */
+    .nav__links a {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: inline-block;
+      border: 1.5px solid #1A1A1A;
+      border-radius: 6px;
+      padding: 6px 14px;
+      background: #DDDED6;
+      color: #1A1A1A;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav__links a:hover {
+      background: #9D84C7;
+      color: #1A1A1A;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav__mobile-links a {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: inline-block;
+      border: 1.5px solid #1A1A1A;
+      border-radius: 6px;
+      padding: 6px 14px;
+      background: #DDDED6;
+      color: #1A1A1A;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav__mobile-links a:hover {
+      background: #9D84C7;
+      color: #1A1A1A;
     }
 
     /* ── C4 : section label ── */
@@ -95,6 +136,7 @@
 
     .hero-v2__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2.2rem, 3.5vw, 3.2rem);
       line-height: 1.1;
       color: #1A1A1A;
@@ -144,6 +186,7 @@
 
     .s02__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.1;
       color: #1A1A1A;
@@ -223,6 +266,7 @@
 
     .s03__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
       margin-bottom: 12px;
@@ -254,10 +298,17 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
+    .s03-card--link {
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
     .s03-card__title {
       font-family: 'VHS-Gothic', sans-serif;
       font-size: 1.1rem;
-      color: #1A1A1A;
+      color: #9D84C7;
       margin-bottom: 10px;
     }
 
@@ -345,6 +396,7 @@
 
     .s04__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
       margin-bottom: 12px;
@@ -393,7 +445,7 @@
     }
 
     /* ════════════════════════════════════
-       SECTION 05 — AVEC QUI ON BOSSE
+       SECTION 05 — NOS PARTENAIRES
     ════════════════════════════════════ */
     .s05 {
       background-color: #DDDED6;
@@ -406,6 +458,7 @@
 
     .s05__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
       margin-bottom: 12px;
@@ -422,6 +475,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
+      align-items: stretch;
     }
 
     .s05-card {
@@ -429,6 +483,9 @@
       border-radius: 12px;
       padding: 28px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .s05-card:hover {
@@ -447,15 +504,21 @@
     }
 
     /* C7 : logos Courir/Gémo uniformisés */
+    .s05-card__logo-wrap {
+      display: flex;
+      align-items: center;
+      height: 120px;
+      margin-bottom: 14px;
+    }
+
     .s05-card__logo {
-      height: 75px;
+      height: 120px;
       width: auto;
       max-width: 200px;
       object-fit: contain;
       display: block;
-      margin-left: 0;
-      margin-bottom: 14px;
-      mix-blend-mode: darken;
+      margin: 0;
+      mix-blend-mode: multiply;
     }
 
     .s05-card__name {
@@ -493,6 +556,7 @@
 
     .s06__title {
       font-family: 'Ayr Eighties Aesthetic', sans-serif;
+      font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
       color: #1A1A1A;
       margin-bottom: 12px;
@@ -741,6 +805,7 @@
       /* Section 05 */
       .s05__grid {
         grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
       }
 
       /* Section 06 */
@@ -825,7 +890,7 @@
     <div class="hero-v2__inner container">
       <div class="hero-v2__content">
         <h1 class="hero-v2__title">Votre projet entre nos mains expertes.</h1>
-        <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre marque, livré par des gens en qui vous pouvez avoir confiance. On a monté cet atelier pour ça : une équipe entière, un seul lieu à Reims, du premier fil à la livraison.</p>
+        <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre projet, livré par des spécialistes en qui vous pouvez avoir confiance ? On a monté cet atelier pour ça ! Une équipe entière, un seul lieu à Reims, du premier fil à la livraison !</p>
         <div class="hero-v2__ctas">
           <a href="#contact" class="btn-noir">Parler de votre projet</a>
           <a href="#realisations" class="hero-v2__link">Voir nos réalisations →</a>
@@ -833,9 +898,32 @@
         <p class="promesse__france">🇫🇷 Customisation réalisée en France.</p>
       </div>
       <div class="hero-v2__visual">
-        <img src="assets/images/presse-1.jpg" alt="Atelier PROJO Custom — presse thermique DTF sur t-shirt" loading="eager">
+        <img src="assets/images/Photo ambiance atelier.jpeg" alt="Atelier de personnalisation textile PROJO Custom à Reims" loading="eager">
       </div>
     </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       BANDEAU RÉALISATIONS
+  ══════════════════════════════ -->
+  <section class="s-realisations" id="realisations">
+  <div class="image-scroll" aria-label="Galerie de réalisations">
+    <div class="image-scroll__track">
+      <div class="image-scroll__item image-scroll__item--1"><img src="assets/images/real-sharingan.png" alt="T-shirt noir Sharingan personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--2"><img src="assets/images/real-akatsuki.png" alt="T-shirt noir Akatsuki personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--3"><img src="assets/images/real-zoro.png" alt="T-shirt noir Zoro One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--4"><img src="assets/images/real-sasuke.png" alt="T-shirt noir Sasuke personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--5"><img src="assets/images/real-luffy.png" alt="T-shirt blanc Luffy One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--6"><img src="assets/images/real-konoha.png" alt="Broderie Konoha Naruto sur t-shirt noir" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <!-- Duplicates pour boucle CSS seamless -->
+      <div class="image-scroll__item image-scroll__item--1" aria-hidden="true"><img src="assets/images/real-sharingan.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--2" aria-hidden="true"><img src="assets/images/real-akatsuki.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--3" aria-hidden="true"><img src="assets/images/real-zoro.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--4" aria-hidden="true"><img src="assets/images/real-sasuke.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--5" aria-hidden="true"><img src="assets/images/real-luffy.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--6" aria-hidden="true"><img src="assets/images/real-konoha.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+    </div>
+  </div>
   </section>
 
   <!-- ══════════════════════════════
@@ -844,26 +932,12 @@
   <section class="s02" id="atelier">
     <div class="container">
       <div class="s02__header">
-        <h2 class="s02__title">Tout est fait maison. À Reims.</h2>
-        <p class="s02__subtitle">De la broderie à l'expédition. Une seule équipe, zéro intermédiaire.</p>
+        <h2 class="s02__title">Tout est fait maison !</h2>
+        <p class="s02__subtitle">Une seule équipe, zéro intermédiaire.</p>
       </div>
       <div class="s02__inner">
         <div class="s02__photo">
           <img src="assets/images/brodeuse-1.jpg" alt="Broderie en cours dans l'atelier PROJO Custom" loading="lazy">
-        </div>
-        <div class="s02__cards">
-          <article class="s02-card">
-            <h3 class="s02-card__title">Multitechnique</h3>
-            <p class="s02-card__body">Broderie, DTF, patch, packaging. Sous le même toit.</p>
-          </article>
-          <article class="s02-card">
-            <h3 class="s02-card__title">Réactifs</h3>
-            <p class="s02-card__body">Pas d'allers-retours. Le planning, c'est nous qui le tenons.</p>
-          </article>
-          <article class="s02-card">
-            <h3 class="s02-card__title">Qualité maîtrisée</h3>
-            <p class="s02-card__body">On voit chaque pièce. Rien ne part si on n'est pas d'accord.</p>
-          </article>
         </div>
       </div>
     </div>
@@ -882,29 +956,21 @@
       <span class="v2-label">Techniques</span>
       <div class="s03-grid">
 
-        <article class="s03-card">
-          <h3 class="s03-card__title">Broderie</h3>
-          <p class="s03-card__accroche">La signature qui ne bouge pas.</p>
-          <p class="s03-card__body">Le motif est cousu dans le textile, point par point. Du relief, une tenue dans le temps. Parfait pour les logos, les polos, les casquettes.</p>
-        </article>
+        <a href="#" class="s03-card s03-card--link">
+          <h3 class="s03-card__title">Nos broderies</h3>
+        </a>
 
-        <article class="s03-card">
-          <h3 class="s03-card__title">DTF</h3>
-          <p class="s03-card__accroche">Pas de minimum de quantité.</p>
-          <p class="s03-card__body">Impression haute définition sur n'importe quel textile. Couleurs illimitées, dégradés complexes, petites séries bienvenues.</p>
-        </article>
+        <a href="#" class="s03-card s03-card--link">
+          <h3 class="s03-card__title">Nos DTF</h3>
+        </a>
 
-        <article class="s03-card">
-          <h3 class="s03-card__title">Patch</h3>
-          <p class="s03-card__accroche">Votre marque, là où on la voit.</p>
-          <p class="s03-card__body">Un écusson brodé ou tissé, cousu sur le vêtement. Sur les bombers, les casquettes, les vestes. Effet immédiat, finition couture.</p>
-        </article>
+        <a href="#" class="s03-card s03-card--link">
+          <h3 class="s03-card__title">Nos Patchs</h3>
+        </a>
 
-        <article class="s03-card">
-          <h3 class="s03-card__title">Packaging</h3>
-          <p class="s03-card__accroche">L'emballage fait partie de l'expérience.</p>
-          <p class="s03-card__body">Pochons en tissu, boîtes cartonnées, étiquettes hangtag. Tout ce qui accompagne le vêtement, à vos couleurs.</p>
-        </article>
+        <a href="#" class="s03-card s03-card--link">
+          <h3 class="s03-card__title">Nos Packagings</h3>
+        </a>
 
       </div>
 
@@ -931,29 +997,6 @@
         <a href="#" class="s03__catalogue-link">Voir tout le catalogue →</a>
       </div>
     </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       BANDEAU RÉALISATIONS
-  ══════════════════════════════ -->
-  <section class="s-realisations" id="realisations">
-  <div class="image-scroll" aria-label="Galerie de réalisations">
-    <div class="image-scroll__track">
-      <div class="image-scroll__item image-scroll__item--1"><img src="assets/images/real-sharingan.png" alt="T-shirt noir Sharingan personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--2"><img src="assets/images/real-akatsuki.png" alt="T-shirt noir Akatsuki personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--3"><img src="assets/images/real-zoro.png" alt="T-shirt noir Zoro One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--4"><img src="assets/images/real-sasuke.png" alt="T-shirt noir Sasuke personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--5"><img src="assets/images/real-luffy.png" alt="T-shirt blanc Luffy One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--6"><img src="assets/images/real-konoha.png" alt="Broderie Konoha Naruto sur t-shirt noir" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <!-- Duplicates pour boucle CSS seamless -->
-      <div class="image-scroll__item image-scroll__item--1" aria-hidden="true"><img src="assets/images/real-sharingan.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--2" aria-hidden="true"><img src="assets/images/real-akatsuki.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--3" aria-hidden="true"><img src="assets/images/real-zoro.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--4" aria-hidden="true"><img src="assets/images/real-sasuke.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--5" aria-hidden="true"><img src="assets/images/real-luffy.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--6" aria-hidden="true"><img src="assets/images/real-konoha.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-    </div>
-  </div>
   </section>
 
   <!-- ══════════════════════════════
@@ -991,36 +1034,42 @@
   </section>
 
   <!-- ══════════════════════════════
-       SECTION 05 — AVEC QUI ON BOSSE
+       SECTION 05 — NOS PARTENAIRES
   ══════════════════════════════ -->
   <section class="s05" id="clients">
     <div class="container">
       <div class="s05__header">
-        <h2 class="s05__title">Avec qui on bosse</h2>
+        <h2 class="s05__title">Nos partenaires</h2>
         <p class="s05__subtitle">Des clubs aux grandes enseignes. Chaque projet est traité avec la même exigence.</p>
       </div>
       <div class="s05__grid">
 
         <article class="s05-card">
           <span class="s05-card__type">Retailer</span>
-          <img src="assets/logo/Logo_Courir.png" alt="Courir" class="s05-card__logo">
+          <div class="s05-card__logo-wrap">
+            <img src="assets/logo/Logo_Courir.png" alt="Courir" class="s05-card__logo">
+          </div>
           <p class="s05-card__desc">Collections textiles sous licences officielles, produites chaque saison depuis 2020.</p>
         </article>
 
         <article class="s05-card">
           <span class="s05-card__type">Retailer</span>
-          <img src="assets/logo/Logo-Gemo.png" alt="Gémo" class="s05-card__logo">
+          <div class="s05-card__logo-wrap">
+            <img src="assets/logo/Logo-Gemo.png" alt="Gémo" class="s05-card__logo">
+          </div>
           <p class="s05-card__desc">Teeshirts Hunter x Hunter sous licence officielle, développés pour l'enseigne.</p>
         </article>
 
         <article class="s05-card">
           <span class="s05-card__type">Influenceur</span>
+          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:14px;" loading="lazy">
           <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
           <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
         </article>
 
         <article class="s05-card">
           <span class="s05-card__type">Sportif · Association</span>
+          <img src="assets/images/Allan Saint Maximin.png" alt="Portrait Allan Saint-Maximin" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:14px;" loading="lazy">
           <h3 class="s05-card__name">Allan Saint-Maximin · OVNI</h3>
           <p class="s05-card__desc">Textile personnalisé pour l'association OVNI, projet social du joueur de football.</p>
         </article>
