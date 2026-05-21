@@ -18,13 +18,13 @@
       font-style: normal;
     }
 
-    /* ── V2 : page background + font override ── */
-    :root {
-      --font-body: 'Space Grotesk', Helvetica, Arial, sans-serif;
-    }
-
+    /* ── V2 : page background override ── */
     html, body {
       background-color: #F4F4F4;
+    }
+
+    /* ── Space Grotesk : éléments de corps de texte uniquement ── */
+    p, li, label {
       font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
     }
 
@@ -189,7 +189,7 @@
     }
 
     .hero-v2__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: clamp(0.95rem, 1.2vw, 1.1rem);
       color: #555;
       max-width: 580px;
@@ -206,7 +206,7 @@
     }
 
     .hero-v2__link {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1rem;
       color: #1A1A1A;
       transition: color 0.2s ease;
@@ -239,7 +239,7 @@
     }
 
     .s02__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
       color: #555;
       line-height: 1.7;
@@ -298,29 +298,17 @@
       .s02__tech-grid {
         display: flex;
         flex-direction: column;
-        gap: 0;
-        position: relative;
+        gap: 12px;
       }
 
       .s02-tech-card {
         width: 100%;
         height: 120px;
         border-radius: 4px;
-        position: relative;
       }
-
-      .s02-tech-card:not(:first-child) {
-        margin-top: -20px;
-      }
-
-      .s02-tech-card:nth-child(1) { z-index: 1; }
-      .s02-tech-card:nth-child(2) { z-index: 2; }
-      .s02-tech-card:nth-child(3) { z-index: 3; }
-      .s02-tech-card:nth-child(4) { z-index: 4; }
 
       .s02-tech-card:hover {
         transform: translateY(-8px);
-        z-index: 10;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
         color: #9D84C7;
       }
@@ -347,7 +335,7 @@
     }
 
     .s03__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
       color: #555;
       line-height: 1.7;
@@ -388,7 +376,7 @@
 
     /* C6 : hiérarchie interne cartes techniques */
     .s03-card__accroche {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 15px;
       font-weight: 700;
       color: #9D84C7;
@@ -396,7 +384,7 @@
     }
 
     .s03-card__body {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: rgba(26, 26, 26, 0.75);
       line-height: 1.65;
@@ -444,7 +432,7 @@
 
     /* C5 : lien catalogue */
     .s03__catalogue-link {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 16px;
       font-weight: 700;
       color: #1A1A1A;
@@ -477,7 +465,7 @@
     }
 
     .s04__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
       color: #555;
       line-height: 1.7;
@@ -512,7 +500,7 @@
     }
 
     .s04-step__body {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 0.95rem;
       color: #444;
       line-height: 1.7;
@@ -539,7 +527,7 @@
     }
 
     .s05__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
       color: #555;
       line-height: 1.7;
@@ -569,9 +557,9 @@
 
     .s05-card__type {
       font-family: 'VHS-Gothic', sans-serif;
-      font-size: 0.68rem;
+      font-size: 0.82rem;
       letter-spacing: 0.15em;
-      text-transform: uppercase;
+      text-transform: none;
       color: #9D84C7;
       margin-bottom: 14px;
       display: block;
@@ -605,7 +593,7 @@
     }
 
     .s05-card__desc {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 0.9rem;
       color: #555;
       line-height: 1.6;
@@ -639,7 +627,7 @@
     }
 
     .s06__subtitle {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
       color: #FFFFFF;
       margin-bottom: 36px;
@@ -679,7 +667,7 @@
     }
 
     .s06-contact-card__value {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 0.95rem;
       color: #1A1A1A;
       text-decoration: none;
@@ -701,7 +689,7 @@
     .contact-form-v2 input,
     .contact-form-v2 textarea {
       width: 100%;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 1rem;
       color: #1A1A1A;
       background-color: #FFFFFF;
@@ -737,7 +725,7 @@
 
     .contact-form-v2 .field__error-msg {
       display: none;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 0.82rem;
       color: #e05454;
       margin-top: 4px;
@@ -751,7 +739,7 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 0.875rem;
       color: #444;
       cursor: pointer;
@@ -776,17 +764,6 @@
     /* ════════════════════════════════════
        MEDIA QUERIES V2
     ════════════════════════════════════ */
-    @media (min-width: 1024px) {
-      /* Nav logo +15% desktop */
-      .nav__logo {
-        height: 44px;
-      }
-      /* Footer logo +20% desktop */
-      .footer-col__logo {
-        height: 43px;
-      }
-    }
-
     @media (min-width: 768px) {
       /* Nav logo intermédiaire */
       .nav__logo {
@@ -840,7 +817,7 @@
       .s02__inner {
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: stretch;
+        align-items: center;
         gap: 48px;
       }
 
@@ -923,6 +900,17 @@
       .s06__form-col {
         flex: 1 1 60%;
         min-width: 300px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      /* Nav logo +15% vs mobile 38px → 44px */
+      .nav__logo {
+        height: 44px;
+      }
+      /* Footer logo +20% vs mobile 36px → 43px */
+      .footer-col__logo {
+        height: 43px;
       }
     }
 
