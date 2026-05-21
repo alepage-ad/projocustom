@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJO Custom — Atelier broderie &amp; DTF à Reims | Personnalisation textile sur-mesure</title>
+  <meta name="description" content="Atelier de personnalisation textile à Reims. Broderie, DTF, patch, packaging. Une seule équipe, zéro intermédiaire. Devis gratuit sous 48h.">
+  <link rel="icon" type="image/jpeg" href="assets/logo/Favicon Projo.jpeg">
+  <link rel="apple-touch-icon" href="assets/logo/Favicon Projo.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Brumder';
+      src: url('assets/fonts/Brumder-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── V2 : page background + font override ── */
+    :root {
+      --font-body: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    }
+
+    html, body {
+      background-color: #F4F4F4;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    }
+
+    /* ── C8 : container fluide 1280px ── */
+    .container {
+      max-width: 1280px;
+      padding: 0 clamp(16px, 4vw, 80px);
+    }
+
+    /* ── C2 : bouton violet (CTA principal) ── */
+    .btn-noir {
+      display: inline-block;
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1rem;
+      background-color: #9D84C7;
+      color: #FFFFFF;
+      border: 2px solid #9D84C7;
+      border-radius: 999px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-noir:hover {
+      background-color: #94D6F2;
+      border-color: #94D6F2;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    /* C2 : btn-primary hover → texte blanc */
+    .btn-primary:hover {
+      color: #FFFFFF;
+    }
+
+    /* ── Nav links : style tags rétro ── */
+    .nav__links a {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: inline-block;
+      border: 1.5px solid #1A1A1A;
+      border-radius: 0;
+      padding: 6px 14px;
+      background: #DDDED6;
+      color: #1A1A1A;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav__links a:hover {
+      background: #9D84C7;
+      color: #1A1A1A;
+    }
+
+    .nav__links {
+      /* display géré par style.css (none mobile / flex desktop 768px+) */
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav__mobile-links {
+      gap: 12px;
+      align-items: stretch;
+      width: 85%;
+    }
+
+    .nav__mobile-links li {
+      list-style: none;
+      width: 100%;
+    }
+
+    .nav__mobile-links a {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 13px;
+      padding: 12px 16px;
+      white-space: nowrap;
+      border: 1.5px solid #1A1A1A;
+      border-radius: 0;
+      background: #DDDED6;
+      color: #1A1A1A;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav__mobile-links a:hover {
+      background: #9D84C7;
+    }
+
+    .nav__mobile-cta {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: block;
+      width: 85%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 13px;
+      padding: 12px 16px;
+      white-space: nowrap;
+      background-color: #9D84C7;
+      color: #1A1A1A;
+      border-radius: 0;
+      border: none;
+      text-decoration: none;
+    }
+
+    /* ── C4 : section label ── */
+    .v2-label {
+      display: inline-block;
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 17px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9D84C7;
+      margin-bottom: 24px;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 01 — HERO V2 (C1 fifty-fifty)
+    ════════════════════════════════════ */
+    .hero-v2 {
+      background-color: #DDDED6;
+      padding-top: 66px;
+      padding-bottom: 60px;
+    }
+
+    .hero-v2__inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Mobile : image pleine largeur en haut (break out du container padding) */
+    .hero-v2__visual {
+      order: -1;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      height: 240px;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .hero-v2__visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-v2__content {
+      padding: 40px 0 0;
+    }
+
+    .hero-v2__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.1;
+      color: #1A1A1A;
+      margin-bottom: 24px;
+    }
+
+    .hero-v2__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-v2__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .hero-v2__link {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: #1A1A1A;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .hero-v2__link:hover {
+      color: #94D6F2;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 02 — MODÈLE INTÉGRÉ
+    ════════════════════════════════════ */
+    .s02 {
+      background-color: #F4F4F4;
+      padding: 60px 0;
+    }
+
+    .s02__header {
+      margin-bottom: 48px;
+    }
+
+    .s02__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+
+    .s02__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .s02__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .s02__photo {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .s02__photo img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .s02__tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      flex: 1;
+    }
+
+    .s02-tech-card {
+      background-color: #DDDED6;
+      color: #1A1A1A;
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1rem;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .s02-tech-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+      color: #9D84C7;
+    }
+
+    @media (min-width: 1024px) {
+      .s02__tech-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+      }
+
+      .s02-tech-card {
+        width: 100%;
+        height: 120px;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      .s02-tech-card:not(:first-child) {
+        margin-top: -20px;
+      }
+
+      .s02-tech-card:nth-child(1) { z-index: 1; }
+      .s02-tech-card:nth-child(2) { z-index: 2; }
+      .s02-tech-card:nth-child(3) { z-index: 3; }
+      .s02-tech-card:nth-child(4) { z-index: 4; }
+
+      .s02-tech-card:hover {
+        transform: translateY(-8px);
+        z-index: 10;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        color: #9D84C7;
+      }
+    }
+
+    /* ════════════════════════════════════
+       SECTION 03 — CE QU'ON FAIT
+    ════════════════════════════════════ */
+    .s03 {
+      background-color: #DDDED6;
+      padding: 60px 0;
+    }
+
+    .s03__header {
+      margin-bottom: 48px;
+    }
+
+    .s03__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+
+    .s03__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .s03-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .s03-card {
+      background-color: #F4F4F4;
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .s03-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .s03-card--link {
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .s03-card__title {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1.1rem;
+      color: #9D84C7;
+      margin-bottom: 10px;
+    }
+
+    /* C6 : hiérarchie interne cartes techniques */
+    .s03-card__accroche {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #9D84C7;
+      margin-bottom: 8px;
+    }
+
+    .s03-card__body {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.75);
+      line-height: 1.65;
+    }
+
+    .s03-catalogue__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* C7 : vignettes catalogue */
+    .s03-vignette {
+      background-color: #F4F4F4;
+      border-radius: 12px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 12px 14px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .s03-vignette__img {
+      flex: 1;
+      width: 100%;
+      object-fit: contain;
+      min-height: 0;
+    }
+
+    .s03-vignette:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .s03-vignette__label {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 13px;
+      color: #1A1A1A;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* C5 : lien catalogue */
+    .s03__catalogue-link {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1A1A1A;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .s03__catalogue-link:hover {
+      color: #9D84C7;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 04 — COMMENT ÇA SE PASSE
+    ════════════════════════════════════ */
+    .s04 {
+      background-color: #F4F4F4;
+      padding: 60px 0;
+    }
+
+    .s04__header {
+      margin-bottom: 48px;
+    }
+
+    .s04__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+
+    .s04__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .s04__steps {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      position: relative;
+    }
+
+    .s04-step {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* C6 : numéros process */
+    .s04-step__number {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 48px;
+      color: #9D84C7;
+      opacity: 0.5;
+      line-height: 1;
+    }
+
+    .s04-step__title {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1.2rem;
+      color: #1A1A1A;
+    }
+
+    .s04-step__body {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 05 — NOS PARTENAIRES
+    ════════════════════════════════════ */
+    .s05 {
+      background-color: #DDDED6;
+      padding: 60px 0;
+    }
+
+    .s05__header {
+      margin-bottom: 48px;
+    }
+
+    .s05__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+
+    .s05__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .s05__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .s05-card {
+      background-color: #F4F4F4;
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .s05-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .s05-card__type {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9D84C7;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* C7 : logos Courir/Gémo uniformisés */
+    .s05-card__logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      margin-bottom: 14px;
+    }
+
+    .s05-card__logo {
+      height: 120px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      display: block;
+      margin: 0;
+      mix-blend-mode: darken;
+    }
+
+    .s05-card__name {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1.2rem;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+      text-transform: none;
+    }
+
+    .s05-card__desc {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 06 — FORMULAIRE CONTACT
+    ════════════════════════════════════ */
+    .s06 {
+      background: linear-gradient(135deg, #9D84C7 0%, #94D6F2 100%);
+      padding: 60px 0;
+    }
+
+    .s06__layout {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .s06__form-col {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .s06__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .s06__subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .s06__side-col {
+      flex: 0 0 300px;
+    }
+
+    .s06-side-title {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .s06-contact-card {
+      background-color: #DDDED6;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+    }
+
+    .s06-contact-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* C9 : labels casse corrigée (sans text-transform) */
+    .s06-contact-card__label {
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.10em;
+      color: #9D84C7;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .s06-contact-card__value {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      color: #1A1A1A;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+    }
+
+    .s06-contact-card__value:hover {
+      color: #94D6F2;
+    }
+
+    /* Contact form */
+    .contact-form-v2 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form-v2 input,
+    .contact-form-v2 textarea {
+      width: 100%;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: #1A1A1A;
+      background-color: #FFFFFF;
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      appearance: none;
+    }
+
+    .contact-form-v2 input::placeholder,
+    .contact-form-v2 textarea::placeholder {
+      color: #AAAAAA;
+    }
+
+    .contact-form-v2 input:focus,
+    .contact-form-v2 textarea:focus {
+      outline: none;
+      border-color: #9D84C7;
+      box-shadow: 0 0 0 3px rgba(157, 132, 199, 0.15);
+    }
+
+    .contact-form-v2 textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form-v2 .field--error input,
+    .contact-form-v2 .field--error textarea {
+      border-color: #e05454;
+      box-shadow: 0 0 0 3px rgba(224, 84, 84, 0.15);
+    }
+
+    .contact-form-v2 .field__error-msg {
+      display: none;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #e05454;
+      margin-top: 4px;
+    }
+
+    .contact-form-v2 .field--error .field__error-msg {
+      display: block;
+    }
+
+    .contact-rgpd-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 0.875rem;
+      color: #444;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .contact-rgpd-label input[type="checkbox"] {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: #9D84C7;
+      appearance: auto;
+    }
+
+    .contact-rgpd-label a {
+      color: #9D84C7;
+      text-decoration: underline;
+    }
+
+    /* ════════════════════════════════════
+       MEDIA QUERIES V2
+    ════════════════════════════════════ */
+    @media (min-width: 1024px) {
+      /* Nav logo +15% desktop */
+      .nav__logo {
+        height: 44px;
+      }
+      /* Footer logo +20% desktop */
+      .footer-col__logo {
+        height: 43px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      /* Nav logo intermédiaire */
+      .nav__logo {
+        height: 40px;
+      }
+
+      /* C1/C2/C3 : hero desktop — colonnes 55/45, stretch, fluide */
+      .hero-v2 {
+        padding-top: 66px;
+        padding-bottom: 0;
+      }
+
+      .hero-v2__inner {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 48px;
+        padding: 60px 0;
+      }
+
+      .hero-v2__visual {
+        order: 0;
+        flex: 1 1 40%;
+        width: auto;
+        margin-left: 0;
+        height: 100%;
+        min-height: 420px;
+        align-self: stretch;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .hero-v2__visual img {
+        height: 100%;
+      }
+
+      .hero-v2__content {
+        flex: 1 1 52%;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* C6 : numéros process 64px desktop */
+      .s04-step__number {
+        font-size: 64px;
+      }
+
+      /* Section 02 */
+      .s02__inner {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 48px;
+      }
+
+      .s02__photo {
+        flex: 0 0 44%;
+      }
+
+      .s02__photo img {
+        height: 100%;
+        min-height: 380px;
+        object-fit: cover;
+      }
+
+      .s02__tech-grid {
+        align-content: stretch;
+      }
+
+      .s02-tech-card {
+        min-height: 120px;
+      }
+
+      /* Section 03 */
+      .s03-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .s03-catalogue__grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      /* C7 : vignettes 160px desktop */
+      .s03-vignette {
+        min-height: 160px;
+      }
+
+      /* Section 04 */
+      .s04__steps {
+        flex-direction: row;
+        gap: 0;
+        align-items: flex-start;
+      }
+
+      .s04__steps::before {
+        content: '';
+        position: absolute;
+        top: 28px;
+        left: 5%;
+        right: 5%;
+        height: 2px;
+        border-top: 2px dashed #9D84C7;
+        opacity: 0.25;
+        pointer-events: none;
+      }
+
+      .s04-step {
+        flex: 1;
+        padding: 0 24px;
+      }
+
+      /* Section 05 */
+      .s05__grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
+      }
+
+      /* Section 06 */
+      .s06__layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 60px;
+      }
+
+      .s06__side-col {
+        flex: 1 1 28%;
+        min-width: 240px;
+        padding-top: 124px;
+      }
+
+      .s06__form-col {
+        flex: 1 1 60%;
+        min-width: 300px;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .hero-v2__inner {
+        gap: 64px;
+      }
+    }
+
+    /* ── Footer CTA : police Brumder ── */
+    .footer-cta__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+    }
+
+    /* ── Footer liens légaux : zone de clic élargie (min 44px tap target) ── */
+    .footer-legal__links a {
+      display: inline-block;
+      padding: 12px 8px;
+      min-height: 44px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ── Section catalogue ── */
+    .s-catalogue {
+      background-color: #DDDED6;
+      padding: 80px 0;
+    }
+
+    .s-catalogue__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1A1A1A;
+      margin-bottom: 40px;
+    }
+
+    /* ── Bandeau réalisations ── */
+    .s-realisations {
+      background-color: #1A1A1A;
+    }
+    .s-realisations .image-scroll {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       NAV
+  ══════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#accueil" aria-label="Accueil PROJO Custom">
+          <img src="assets/logo/Logo_Projo_fond_blanc.png" alt="PROJO Custom" class="nav__logo" loading="lazy">
+        </a>
+        <ul class="nav__links">
+          <li><a href="#techniques">Nos techniques</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#process">Comment ça se passe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-primary nav__cta">Demander un devis</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile-overlay" id="mobile-overlay" aria-hidden="true" role="dialog" aria-label="Menu de navigation">
+      <button class="nav__mobile-close" id="mobile-close" aria-label="Fermer le menu">&times;</button>
+      <ul class="nav__mobile-links">
+        <li><a href="#techniques">Nos techniques</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#process">Comment ça se passe</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav__mobile-cta">Demander un devis</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       SECTION 01 — HERO
+  ══════════════════════════════ -->
+  <section class="hero-v2" id="accueil">
+    <div class="hero-v2__inner container">
+      <div class="hero-v2__content">
+        <h1 class="hero-v2__title">Votre projet entre nos mains expertes.</h1>
+        <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre projet, livré par des spécialistes en qui vous pouvez avoir confiance ? On a monté cet atelier pour ça ! Une équipe entière, un seul lieu à Reims, du premier fil à la livraison !</p>
+        <div class="hero-v2__ctas">
+          <a href="#contact" class="btn-noir">Parler de votre projet</a>
+          <a href="#realisations" class="hero-v2__link">Voir nos réalisations →</a>
+        </div>
+        <p class="promesse__france">🇫🇷 Customisation réalisée en France.</p>
+      </div>
+      <div class="hero-v2__visual">
+        <img src="assets/images/Photo ambiance atelier.jpeg" alt="Atelier de personnalisation textile PROJO Custom à Reims" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       BANDEAU RÉALISATIONS
+  ══════════════════════════════ -->
+  <section class="s-realisations" id="realisations">
+  <div class="image-scroll" aria-label="Galerie de réalisations">
+    <div class="image-scroll__track">
+      <div class="image-scroll__item image-scroll__item--1"><img src="assets/images/real-sharingan.png" alt="T-shirt noir Sharingan personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--2"><img src="assets/images/real-akatsuki.png" alt="T-shirt noir Akatsuki personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--3"><img src="assets/images/real-zoro.png" alt="T-shirt noir Zoro One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--4"><img src="assets/images/real-sasuke.png" alt="T-shirt noir Sasuke personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--5"><img src="assets/images/real-luffy.png" alt="T-shirt blanc Luffy One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--6"><img src="assets/images/real-konoha.png" alt="Broderie Konoha Naruto sur t-shirt noir" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <!-- Duplicates pour boucle CSS seamless -->
+      <div class="image-scroll__item image-scroll__item--1" aria-hidden="true"><img src="assets/images/real-sharingan.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--2" aria-hidden="true"><img src="assets/images/real-akatsuki.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--3" aria-hidden="true"><img src="assets/images/real-zoro.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--4" aria-hidden="true"><img src="assets/images/real-sasuke.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--5" aria-hidden="true"><img src="assets/images/real-luffy.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--6" aria-hidden="true"><img src="assets/images/real-konoha.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+    </div>
+  </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 02 — MODÈLE INTÉGRÉ
+  ══════════════════════════════ -->
+  <section class="s02" id="techniques">
+    <div class="container">
+      <div class="s02__header">
+        <h2 class="s02__title">Tout est fait maison !</h2>
+        <p class="s02__subtitle">Une seule équipe, zéro intermédiaire.</p>
+      </div>
+      <div class="s02__inner">
+        <div class="s02__photo">
+          <img src="assets/images/Photo Jean.jpeg" alt="Jean dans l'atelier PROJO Custom" loading="lazy">
+        </div>
+        <div class="s02__tech-grid">
+          <a href="#" class="s02-tech-card">Nos Broderies</a>
+          <a href="#" class="s02-tech-card">Nos DTF</a>
+          <a href="#" class="s02-tech-card">Nos Patchs</a>
+          <a href="#" class="s02-tech-card">Nos Packagings</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION CATALOGUE
+  ══════════════════════════════ -->
+  <section class="s-catalogue">
+    <div class="container">
+      <h2 class="s-catalogue__title">Notre catalogue</h2>
+      <div class="s03-catalogue__grid">
+        <div class="s03-vignette" style="background-color:#FFFFFF;">
+          <img src="assets/images/Tshirt oversized blanc 1.webp" alt="T-shirts personnalisés" class="s03-vignette__img" loading="lazy">
+          <span class="s03-vignette__label">T-shirts</span>
+        </div>
+        <div class="s03-vignette" style="background-color:#FFFFFF;">
+          <img src="assets/images/Hoodie gris 1.webp" alt="Hoodies personnalisés" class="s03-vignette__img" loading="lazy">
+          <span class="s03-vignette__label">Hoodies</span>
+        </div>
+        <div class="s03-vignette" style="background-color:#FFFFFF;">
+          <img src="assets/images/Sweat Noir 1.webp" alt="Sweats personnalisés" class="s03-vignette__img" loading="lazy">
+          <span class="s03-vignette__label">Sweats</span>
+        </div>
+        <div class="s03-vignette" style="background-color:#FFFFFF;">
+          <img src="assets/images/Casquette Noir 3.webp" alt="Accessoires personnalisés" class="s03-vignette__img" loading="lazy">
+          <span class="s03-vignette__label">Accessoires</span>
+        </div>
+      </div>
+      <a href="#" class="s03__catalogue-link">Voir tout le catalogue →</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 04 — COMMENT ÇA SE PASSE
+  ══════════════════════════════ -->
+  <section class="s04" id="process">
+    <div class="container">
+      <div class="s04__header">
+        <h2 class="s04__title">Comment ça se passe</h2>
+        <p class="s04__subtitle">Quatre étapes, un seul interlocuteur. À la pièce comme en gros volume.</p>
+      </div>
+      <div class="s04__steps">
+        <div class="s04-step">
+          <span class="s04-step__number" aria-hidden="true">01</span>
+          <h3 class="s04-step__title">Brief</h3>
+          <p class="s04-step__body">Vous nous parlez de votre projet, par téléphone ou par formulaire. On échange jusqu'à ce que tout soit clair.</p>
+        </div>
+        <div class="s04-step">
+          <span class="s04-step__number" aria-hidden="true">02</span>
+          <h3 class="s04-step__title">Maquette</h3>
+          <p class="s04-step__body">On vous envoie un visuel à valider. Rien ne part en production tant que vous n'avez pas dit oui.</p>
+        </div>
+        <div class="s04-step">
+          <span class="s04-step__number" aria-hidden="true">03</span>
+          <h3 class="s04-step__title">Production</h3>
+          <p class="s04-step__body">On fabrique dans notre atelier, à Reims. Chaque pièce passe sous nos yeux avant de quitter le studio.</p>
+        </div>
+        <div class="s04-step">
+          <span class="s04-step__number" aria-hidden="true">04</span>
+          <h3 class="s04-step__title">Livraison</h3>
+          <p class="s04-step__body">On expédie quand c'est prêt. Vous recevez exactement ce que vous avez vu sur la maquette.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 05 — NOS PARTENAIRES
+  ══════════════════════════════ -->
+  <section class="s05" id="clients">
+    <div class="container">
+      <div class="s05__header">
+        <h2 class="s05__title">Nos partenaires</h2>
+        <p class="s05__subtitle">Des clubs aux grandes enseignes. Chaque projet est traité avec la même exigence.</p>
+      </div>
+      <div class="s05__grid">
+
+        <article class="s05-card">
+          <span class="s05-card__type">Retailer</span>
+          <div class="s05-card__logo-wrap">
+            <img src="assets/logo/Logo_Courir.png" alt="Courir" class="s05-card__logo">
+          </div>
+          <h3 class="s05-card__name">Courir</h3>
+          <p class="s05-card__desc">Collections textiles sous licences officielles, produites chaque saison depuis 2020.</p>
+        </article>
+
+        <article class="s05-card">
+          <span class="s05-card__type">Retailer</span>
+          <div class="s05-card__logo-wrap">
+            <img src="assets/logo/Logo-Gemo.png" alt="Gémo" class="s05-card__logo">
+          </div>
+          <h3 class="s05-card__name">Gémo</h3>
+          <p class="s05-card__desc">Teeshirts Hunter x Hunter sous licence officielle, développés pour l'enseigne.</p>
+        </article>
+
+        <article class="s05-card">
+          <span class="s05-card__type">Créateur de contenu</span>
+          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
+          <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
+          <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
+        </article>
+
+        <article class="s05-card">
+          <span class="s05-card__type">Footballeur professionnel - Association</span>
+          <img src="assets/images/Allan Saint Maximin.png" alt="Portrait Allan Saint-Maximin" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
+          <h3 class="s05-card__name">Allan Saint-Maximin · OVNI</h3>
+          <p class="s05-card__desc">Textile personnalisé pour l'association OVNI, projet social du joueur de football.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION 06 — FORMULAIRE CONTACT
+  ══════════════════════════════ -->
+  <section class="s06" id="contact">
+    <div class="container">
+      <div class="s06__layout">
+
+        <!-- Colonne gauche : titre + formulaire -->
+        <div class="s06__form-col">
+          <h2 class="s06__title">Racontez-nous votre projet.</h2>
+          <p class="s06__subtitle">Réponse sous 48h. On ne facture rien sans votre accord.</p>
+
+          <form name="contact-v2" method="POST" action="https://api.web3forms.com/submit" class="contact-form-v2" id="contact-form-v2" novalidate>
+            <input type="hidden" name="form-name" value="contact-v2">
+            <input type="hidden" name="access_key" value="f844945e-36aa-44e5-ae15-af3641987501">
+            <input type="hidden" name="subject" value="Nouveau projet — projocustom.com V2">
+            <input type="hidden" name="redirect" value="https://projocustom.com/merci.html">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-field" id="v2-field-nom">
+              <input type="text" name="nom" placeholder="Nom / Prénom" required>
+              <span class="field__error-msg">Veuillez renseigner votre nom.</span>
+            </div>
+
+            <div class="form-field" id="v2-field-email">
+              <input type="email" name="email" placeholder="Email professionnel" required>
+              <span class="field__error-msg">Veuillez renseigner un email valide.</span>
+            </div>
+
+            <div class="form-field" id="v2-field-organisation">
+              <input type="text" name="organisation" placeholder="Entreprise / Asso / Club (si applicable)">
+            </div>
+
+            <div class="form-field" id="v2-field-message">
+              <textarea name="message" placeholder="Parlez-nous de votre projet : ce que vous voulez faire, sur quel textile, combien de pièces si vous le savez…" required></textarea>
+              <span class="field__error-msg">Veuillez décrire votre projet.</span>
+            </div>
+
+            <div class="form-field" id="v2-field-rgpd">
+              <label class="contact-rgpd-label">
+                <input type="checkbox" name="rgpd" required>
+                <span>J'accepte que mes données soient utilisées pour traiter ma demande. <a href="politique-confidentialite.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a></span>
+              </label>
+              <span class="field__error-msg">Veuillez accepter la politique de confidentialité.</span>
+            </div>
+
+            <button type="submit" class="btn-noir">Envoyer ma demande</button>
+          </form>
+        </div>
+
+        <!-- Colonne droite : "Plutôt direct ?" -->
+        <div class="s06__side-col">
+          <h3 class="s06-side-title">Plutôt direct ?</h3>
+          <div class="s06-contact-card">
+            <span class="s06-contact-card__label">Par email</span>
+            <a href="mailto:contact@projocustom.com" class="s06-contact-card__value">contact@projocustom.com</a>
+          </div>
+          <div class="s06-contact-card">
+            <span class="s06-contact-card__label">Par t&eacute;l&eacute;phone</span>
+            <a href="https://calendly.com/contact-projostore/30min" class="s06-contact-card__value" target="_blank" rel="noopener noreferrer">Réserver un appel →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="footer" id="footer">
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__grid">
+
+          <div class="footer-col">
+            <img src="assets/logo/Logo_Projo_fond_noir.png" alt="PROJO Custom" class="footer-col__logo" loading="lazy">
+            <p class="footer-col__baseline">L'atelier customisation textile de PROJO</p>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col__heading">Navigation</p>
+            <ul class="footer-col__links">
+              <li><a href="#techniques">Nos techniques</a></li>
+              <li><a href="#realisations">Réalisations</a></li>
+              <li><a href="#process">Comment ça se passe</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col__heading">Contact</p>
+            <div class="footer-col__contact">
+              <a href="mailto:contact@projocustom.com">contact@projocustom.com</a>
+              <a href="https://calendly.com/contact-projostore/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
+              <div class="footer-social">
+                <a href="#" aria-label="Instagram PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="Facebook PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="X (Twitter) PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L2.25 2.25h6.978l4.263 5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn PROJO Custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="3"/>
+                    <line x1="8" y1="11" x2="8" y2="16"/>
+                    <line x1="8" y1="8" x2="8" y2="8.5"/>
+                    <line x1="12" y1="16" x2="12" y2="11"/>
+                    <path d="M12 13.5a2.5 2.5 0 0 1 5 0V16"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-legal">
+          <span>© 2026 projocustom.com</span>
+          <div class="footer-legal__links">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            <a href="cgv.html">CGV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget" id="wa-widget">
+    <div class="wa-bubble" id="wa-bubble" aria-hidden="true" role="dialog" aria-label="Chat WhatsApp">
+      <div class="wa-bubble__header">
+        <div class="wa-bubble__header-left">
+          <div class="wa-bubble__avatar" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </div>
+          <div>
+            <p class="wa-bubble__name">PROJO Custom</p>
+            <p class="wa-bubble__status">Répond rapidement</p>
+          </div>
+        </div>
+        <button class="wa-bubble__close" id="wa-close" aria-label="Fermer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="wa-bubble__chat">
+        <div class="wa-bubble__msg-bubble">Bonjour 👋 Une question sur votre projet de customisation ? Écrivez-nous !</div>
+      </div>
+      <div class="wa-bubble__compose">
+        <input type="text" class="wa-bubble__input" id="wa-input" placeholder="Écrire un message…" value="Bonjour PROJO Custom, j'ai une question sur un projet de customisation">
+        <a class="wa-bubble__send" id="wa-send" href="https://wa.me/33666525733" target="_blank" rel="noopener noreferrer" aria-label="Envoyer sur WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <button class="wa-fab" id="wa-fab" aria-label="Ouvrir le chat WhatsApp" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    'use strict';
+
+    /* V2 contact form validation */
+    var contactForm = document.getElementById('contact-form-v2');
+
+    if (contactForm) {
+      var v2Fields = [
+        { id: 'v2-field-nom',     name: 'nom' },
+        { id: 'v2-field-email',   name: 'email' },
+        { id: 'v2-field-message', name: 'message' },
+        { id: 'v2-field-rgpd',    name: 'rgpd' },
+      ];
+
+      contactForm.addEventListener('submit', function (e) {
+        var isValid = true;
+
+        v2Fields.forEach(function (field) {
+          var wrapper = document.getElementById(field.id);
+          if (!wrapper) return;
+          var input = wrapper.querySelector('[name="' + field.name + '"]');
+          if (!input) return;
+
+          var invalid = input.type === 'checkbox' ? !input.checked : !input.value.trim();
+          if (invalid) {
+            wrapper.classList.add('field--error');
+            isValid = false;
+          } else {
+            wrapper.classList.remove('field--error');
+          }
+        });
+
+        if (!isValid) {
+          e.preventDefault();
+          var firstError = contactForm.querySelector('.field--error');
+          if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+
+      contactForm.querySelectorAll('input, textarea').forEach(function (input) {
+        input.addEventListener('input', function () {
+          var wrapper = input.closest('.form-field');
+          if (wrapper && input.value.trim()) wrapper.classList.remove('field--error');
+        });
+        input.addEventListener('change', function () {
+          var wrapper = input.closest('.form-field');
+          if (wrapper) wrapper.classList.remove('field--error');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
