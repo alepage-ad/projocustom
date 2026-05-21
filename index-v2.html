@@ -303,8 +303,8 @@
 
       .s02-tech-card {
         width: 100%;
-        height: 120px;
-        border-radius: 4px;
+        height: 72px;
+        border-radius: 12px;
       }
 
       .s02-tech-card:hover {
@@ -646,7 +646,7 @@
     }
 
     .s06-contact-card {
-      background-color: #DDDED6;
+      background-color: #FFFFFF;
       border-radius: 12px;
       padding: 20px 22px;
       margin-bottom: 12px;
@@ -836,7 +836,7 @@
       }
 
       .s02-tech-card {
-        min-height: 120px;
+        min-height: 72px;
       }
 
       /* Section 03 */
@@ -926,13 +926,34 @@
       font-weight: 400;
     }
 
-    /* ── Footer liens légaux : zone de clic élargie (min 44px tap target) ── */
+    /* ── Footer liens légaux : fix radical cliquabilité ── */
+    .footer-legal {
+      position: relative;
+      z-index: 999;
+      pointer-events: all;
+    }
+
+    .footer-legal__links {
+      position: relative;
+      z-index: 999;
+      pointer-events: all;
+    }
+
     .footer-legal__links a {
       display: inline-block;
       padding: 12px 8px;
       min-height: 44px;
       position: relative;
-      z-index: 10;
+      z-index: 999;
+      pointer-events: all;
+    }
+
+    /* Mobile : padding pour que le widget WhatsApp (fixed, bottom:24px)
+       ne recouvre pas les liens CGV */
+    @media (max-width: 767px) {
+      .footer-bottom {
+        padding-bottom: 80px;
+      }
     }
 
     /* ── Section catalogue ── */
@@ -1157,7 +1178,7 @@
         </article>
 
         <article class="s05-card">
-          <span class="s05-card__type">Créateur de contenu</span>
+          <span class="s05-card__type">Créateur</span>
           <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
           <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
           <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
