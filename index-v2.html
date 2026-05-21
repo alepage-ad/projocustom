@@ -8,6 +8,8 @@
   <link rel="icon" type="image/jpeg" href="assets/logo/Favicon Projo.jpeg">
   <link rel="apple-touch-icon" href="assets/logo/Favicon Projo.jpeg">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'Brumder';
@@ -16,9 +18,14 @@
       font-style: normal;
     }
 
-    /* ── V2 : page background override ── */
+    /* ── V2 : page background + font override ── */
+    :root {
+      --font-body: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    }
+
     html, body {
       background-color: #F4F4F4;
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
     }
 
     /* ── C8 : container fluide 1280px ── */
@@ -285,6 +292,38 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
       color: #9D84C7;
+    }
+
+    @media (min-width: 1024px) {
+      .s02__tech-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+      }
+
+      .s02-tech-card {
+        width: 100%;
+        height: 120px;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      .s02-tech-card:not(:first-child) {
+        margin-top: -20px;
+      }
+
+      .s02-tech-card:nth-child(1) { z-index: 1; }
+      .s02-tech-card:nth-child(2) { z-index: 2; }
+      .s02-tech-card:nth-child(3) { z-index: 3; }
+      .s02-tech-card:nth-child(4) { z-index: 4; }
+
+      .s02-tech-card:hover {
+        transform: translateY(-8px);
+        z-index: 10;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        color: #9D84C7;
+      }
     }
 
     /* ════════════════════════════════════
@@ -559,9 +598,10 @@
 
     .s05-card__name {
       font-family: 'VHS-Gothic', sans-serif;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #1A1A1A;
       margin-bottom: 12px;
+      text-transform: none;
     }
 
     .s05-card__desc {
@@ -575,7 +615,7 @@
        SECTION 06 — FORMULAIRE CONTACT
     ════════════════════════════════════ */
     .s06 {
-      background-color: #F4F4F4;
+      background: linear-gradient(135deg, #9D84C7 0%, #94D6F2 100%);
       padding: 60px 0;
     }
 
@@ -594,14 +634,14 @@
       font-family: 'Brumder', sans-serif;
       font-weight: 400;
       font-size: clamp(2rem, 5vw, 3rem);
-      color: #1A1A1A;
+      color: #FFFFFF;
       margin-bottom: 12px;
     }
 
     .s06__subtitle {
       font-family: Helvetica, Arial, sans-serif;
       font-size: 1.05rem;
-      color: #555;
+      color: #FFFFFF;
       margin-bottom: 36px;
       line-height: 1.7;
     }
@@ -613,7 +653,7 @@
     .s06-side-title {
       font-family: 'VHS-Gothic', sans-serif;
       font-size: 1.1rem;
-      color: #1A1A1A;
+      color: #FFFFFF;
       margin-bottom: 20px;
     }
 
@@ -736,10 +776,21 @@
     /* ════════════════════════════════════
        MEDIA QUERIES V2
     ════════════════════════════════════ */
-    @media (min-width: 768px) {
-      /* Nav logo +20% desktop uniquement */
+    @media (min-width: 1024px) {
+      /* Nav logo +15% desktop */
       .nav__logo {
-        height: 46px;
+        height: 44px;
+      }
+      /* Footer logo +20% desktop */
+      .footer-col__logo {
+        height: 43px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      /* Nav logo intermédiaire */
+      .nav__logo {
+        height: 40px;
       }
 
       /* C1/C2/C3 : hero desktop — colonnes 55/45, stretch, fluide */
@@ -887,10 +938,13 @@
       font-weight: 400;
     }
 
-    /* ── Footer liens légaux : zone de clic élargie ── */
+    /* ── Footer liens légaux : zone de clic élargie (min 44px tap target) ── */
     .footer-legal__links a {
       display: inline-block;
-      padding: 8px 0;
+      padding: 12px 8px;
+      min-height: 44px;
+      position: relative;
+      z-index: 10;
     }
 
     /* ── Section catalogue ── */
@@ -1010,10 +1064,10 @@
       </div>
       <div class="s02__inner">
         <div class="s02__photo">
-          <img src="assets/images/brodeuse-1.jpg" alt="Broderie en cours dans l'atelier PROJO Custom" loading="lazy">
+          <img src="assets/images/Photo Jean.jpeg" alt="Jean dans l'atelier PROJO Custom" loading="lazy">
         </div>
         <div class="s02__tech-grid">
-          <a href="#" class="s02-tech-card">Nos broderies</a>
+          <a href="#" class="s02-tech-card">Nos Broderies</a>
           <a href="#" class="s02-tech-card">Nos DTF</a>
           <a href="#" class="s02-tech-card">Nos Patchs</a>
           <a href="#" class="s02-tech-card">Nos Packagings</a>
@@ -1101,6 +1155,7 @@
           <div class="s05-card__logo-wrap">
             <img src="assets/logo/Logo_Courir.png" alt="Courir" class="s05-card__logo">
           </div>
+          <h3 class="s05-card__name">Courir</h3>
           <p class="s05-card__desc">Collections textiles sous licences officielles, produites chaque saison depuis 2020.</p>
         </article>
 
@@ -1109,18 +1164,19 @@
           <div class="s05-card__logo-wrap">
             <img src="assets/logo/Logo-Gemo.png" alt="Gémo" class="s05-card__logo">
           </div>
+          <h3 class="s05-card__name">Gémo</h3>
           <p class="s05-card__desc">Teeshirts Hunter x Hunter sous licence officielle, développés pour l'enseigne.</p>
         </article>
 
         <article class="s05-card">
-          <span class="s05-card__type">Influenceur</span>
+          <span class="s05-card__type">Créateur de contenu</span>
           <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
           <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
           <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
         </article>
 
         <article class="s05-card">
-          <span class="s05-card__type">Sportif · Association</span>
+          <span class="s05-card__type">Footballeur professionnel - Association</span>
           <img src="assets/images/Allan Saint Maximin.png" alt="Portrait Allan Saint-Maximin" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
           <h3 class="s05-card__name">Allan Saint-Maximin · OVNI</h3>
           <p class="s05-card__desc">Textile personnalisé pour l'association OVNI, projet social du joueur de football.</p>
@@ -1201,14 +1257,6 @@
        FOOTER
   ══════════════════════════════ -->
   <footer class="footer" id="footer">
-
-    <div class="footer-cta">
-      <div class="container">
-        <h2 class="footer-cta__title">Prêt à lancer votre projet ?</h2>
-        <p class="footer-cta__subtitle">Décrivez-nous votre besoin. On s'occupe du reste.</p>
-        <a href="#contact" class="btn-outline">Parler de votre projet</a>
-      </div>
-    </div>
 
     <div class="footer-bottom">
       <div class="container">
