@@ -926,17 +926,19 @@
       font-weight: 400;
     }
 
-    /* ── Footer liens légaux : fix radical cliquabilité ── */
-    .footer-legal {
-      position: relative;
-      z-index: 999;
-      pointer-events: all;
-    }
+    /* ── Footer liens légaux : fix définitif ── */
 
-    .footer-legal__links {
-      position: relative;
-      z-index: 999;
-      pointer-events: all;
+    /* Le container wa-widget (transparent, position:fixed) bloquait les clics
+       dans sa zone même bulle fermée. On lui passe pointer-events:none et on
+       réactive uniquement sur le bouton FAB et la bulle ouverte. */
+    .wa-widget {
+      pointer-events: none;
+    }
+    .wa-fab {
+      pointer-events: auto;
+    }
+    .wa-bubble.is-open {
+      pointer-events: auto;
     }
 
     .footer-legal__links a {
@@ -944,12 +946,13 @@
       padding: 12px 8px;
       min-height: 44px;
       position: relative;
-      z-index: 999;
-      pointer-events: all;
+      z-index: 10;
+      pointer-events: auto;
+      cursor: pointer;
     }
 
-    /* Mobile : padding pour que le widget WhatsApp (fixed, bottom:24px)
-       ne recouvre pas les liens CGV */
+    /* Mobile : padding pour éviter que le FAB WhatsApp (56px + 24px)
+       ne cache les liens légaux */
     @media (max-width: 767px) {
       .footer-bottom {
         padding-bottom: 80px;
