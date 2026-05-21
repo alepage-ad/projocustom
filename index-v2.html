@@ -148,7 +148,7 @@
     ════════════════════════════════════ */
     .hero-v2 {
       background-color: #DDDED6;
-      padding-top: 66px;
+      padding-top: 106px;
       padding-bottom: 60px;
     }
 
@@ -772,7 +772,7 @@
 
       /* C1/C2/C3 : hero desktop — colonnes 55/45, stretch, fluide */
       .hero-v2 {
-        padding-top: 66px;
+        padding-top: 106px;
         padding-bottom: 0;
       }
 
@@ -980,9 +980,47 @@
     .s-realisations .image-scroll {
       background-color: transparent;
     }
+
+    /* ── Ticker band ── */
+    .ticker-band {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      background: #94D6F2;
+      color: #1A1A1A;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ticker-band__item {
+      position: absolute;
+      font-family: 'VHS-Gothic', sans-serif;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      pointer-events: none;
+    }
+    .ticker-band__item.is-active {
+      opacity: 1;
+    }
+    .nav { top: 40px; }
   </style>
 </head>
 <body>
+
+  <!-- ══════════════════════════════
+       TICKER BAND
+  ══════════════════════════════ -->
+  <div class="ticker-band" role="marquee" aria-live="polite">
+    <span class="ticker-band__item is-active">Expédition sous 48 heures*</span>
+    <span class="ticker-band__item">Devis gratuit sous 24h</span>
+    <span class="ticker-band__item">Aucun minimum de commande*</span>
+  </div>
 
   <!-- ══════════════════════════════
        NAV
@@ -1029,12 +1067,10 @@
     <div class="hero-v2__inner container">
       <div class="hero-v2__content">
         <h1 class="hero-v2__title">Votre projet entre nos mains expertes.</h1>
-        <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre projet, livré par des spécialistes en qui vous pouvez avoir confiance ? On a monté cet atelier pour ça ! Une équipe entière, un seul lieu à Reims, du premier fil à la livraison !</p>
+        <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre projet, livré par des spécialistes en qui vous pouvez avoir confiance ? On a monté cet atelier pour ça ! Une équipe entière, un seul lieu à Reims 🇫🇷, du premier fil à la livraison !</p>
         <div class="hero-v2__ctas">
           <a href="#contact" class="btn-noir">Parler de votre projet</a>
-          <a href="#realisations" class="hero-v2__link">Voir nos réalisations →</a>
         </div>
-        <p class="promesse__france">🇫🇷 Customisation réalisée en France.</p>
       </div>
       <div class="hero-v2__visual">
         <img src="assets/images/Photo ambiance atelier.jpeg" alt="Atelier de personnalisation textile PROJO Custom à Reims" loading="eager">
@@ -1154,10 +1190,10 @@
   <!-- ══════════════════════════════
        SECTION 05 — NOS PARTENAIRES
   ══════════════════════════════ -->
-  <section class="s05" id="clients">
+  <section class="s05" id="partenaires">
     <div class="container">
       <div class="s05__header">
-        <h2 class="s05__title">Nos partenaires</h2>
+        <h2 class="s05__title">Ils nous ont fait confiance</h2>
         <p class="s05__subtitle">Des clubs aux grandes enseignes. Chaque projet est traité avec la même exigence.</p>
       </div>
       <div class="s05__grid">
@@ -1182,7 +1218,7 @@
 
         <article class="s05-card">
           <span class="s05-card__type">Créateur</span>
-          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto 14px;" loading="lazy">
+          <img src="assets/images/Sebastien Abdelhamid.png" alt="Portrait Sébastien Abdelhamid" style="width:50%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;display:block;margin:0 auto;" loading="lazy">
           <h3 class="s05-card__name">Sebastien-Abdelhamid</h3>
           <p class="s05-card__desc">Collaborateur de longue date sur plusieurs projets textiles. Capsule Projo en cours.</p>
         </article>
@@ -1423,6 +1459,19 @@
         });
       });
     }
+  </script>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.ticker-band__item');
+      if (!items.length) return;
+      var current = 0;
+      setInterval(function () {
+        items[current].classList.remove('is-active');
+        current = (current + 1) % items.length;
+        items[current].classList.add('is-active');
+      }, 3000);
+    })();
   </script>
 </body>
 </html>
