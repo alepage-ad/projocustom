@@ -130,7 +130,7 @@ const waBubble = document.getElementById('wa-bubble');
 const waClose  = document.getElementById('wa-close');
 const waInput  = document.getElementById('wa-input');
 const waSend   = document.getElementById('wa-send');
-const WA_BASE  = 'https://wa.me/33666525733';
+const WA_BASE  = 'https://wa.me/33745195539';
 
 function updateSendLink() {
   if (!waSend) return;
