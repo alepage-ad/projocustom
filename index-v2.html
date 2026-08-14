@@ -3,8 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJO Custom — Atelier broderie &amp; DTF à Reims | Personnalisation textile sur-mesure</title>
-  <meta name="description" content="Atelier de personnalisation textile à Reims. Broderie, DTF, patch, packaging. Une seule équipe, zéro intermédiaire. Devis gratuit sous 48h.">
+  <title>Broderie &amp; impression textile personnalisée à Reims | PROJO</title>
+  <meta name="description" content="Atelier de customisation textile à Reims. Broderie, DTF, patchs et packaging pour entreprises, clubs, associations, universités et collectivités.">
+  <link rel="canonical" href="https://projocustom.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PROJO">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://projocustom.com/">
+  <meta property="og:title" content="Broderie &amp; impression textile personnalisée à Reims | PROJO">
+  <meta property="og:description" content="Atelier de customisation textile à Reims. Broderie, DTF, patchs et packaging pour entreprises, clubs, associations, universités et collectivités.">
+  <meta property="og:image" content="https://projocustom.com/assets/images/og-projocustom.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Atelier de customisation textile PROJO à Reims">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://projocustom.com/">
+  <meta name="twitter:title" content="Broderie &amp; impression textile personnalisée à Reims | PROJO">
+  <meta name="twitter:description" content="Atelier de customisation textile à Reims. Broderie, DTF, patchs et packaging pour entreprises, clubs, associations, universités et collectivités.">
+  <meta name="twitter:image" content="https://projocustom.com/assets/images/og-projocustom.jpg">
+  <meta name="twitter:image:alt" content="Atelier de customisation textile PROJO à Reims">
+
   <link rel="icon" type="image/jpeg" href="assets/logo/Favicon Projo.jpeg">
   <link rel="apple-touch-icon" href="assets/logo/Favicon Projo.jpeg">
   <link rel="stylesheet" href="style.css">
@@ -160,8 +182,9 @@
     /* Mobile : image pleine largeur en haut (break out du container padding) */
     .hero-v2__visual {
       order: -1;
-      width: calc(100% + 40px);
-      margin-left: -20px;
+      /* full-bleed exact : compense le padding réel du container */
+      width: calc(100% + 2 * clamp(16px, 4vw, 80px));
+      margin-left: calc(-1 * clamp(16px, 4vw, 80px));
       height: 240px;
       overflow: hidden;
       border-radius: 0;
@@ -268,10 +291,12 @@
     .s02__tech-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
       gap: 12px;
       flex: 1;
     }
 
+    /* Blocs non cliquables : ni hover, ni curseur main */
     .s02-tech-card {
       background-color: #DDDED6;
       color: #1A1A1A;
@@ -280,37 +305,15 @@
       border-radius: 12px;
       padding: 24px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .s02-tech-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
-      color: #9D84C7;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
     }
 
     @media (min-width: 1024px) {
       .s02__tech-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .s02-tech-card {
-        width: 70%;
-        height: 94px;
-        border-radius: 12px;
-      }
-
-      .s02-tech-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-        color: #9D84C7;
+        grid-template-columns: 1fr;
       }
     }
 
@@ -383,7 +386,8 @@
       margin-bottom: 8px;
     }
 
-    .s03-card__body {
+    .s03-card__body,
+    .s02-tech-card__body {
       font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: rgba(26, 26, 26, 0.75);
@@ -411,10 +415,12 @@
     }
 
     .s03-vignette__img {
-      flex: 1;
       width: 100%;
-      object-fit: contain;
-      min-height: 0;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .s03-vignette:hover {
@@ -507,10 +513,56 @@
     }
 
     /* ════════════════════════════════════
+       SECTION POUR QUI ON TRAVAILLE
+    ════════════════════════════════════ */
+    .s-cibles {
+      background-color: #DDDED6;
+      padding: 60px 0;
+    }
+
+    .s-cibles__title {
+      font-family: 'Brumder', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1A1A1A;
+      margin-bottom: 12px;
+    }
+
+    .s-cibles__subtitle {
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+      max-width: 860px;
+      margin-bottom: 32px;
+    }
+
+    .s-cibles__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Tags rectangulaires : même traitement que la nav */
+    .s-cibles__tag {
+      font-family: 'VHS-Gothic', sans-serif;
+      display: inline-block;
+      border: 1.5px solid #1A1A1A;
+      border-radius: 0;
+      padding: 6px 14px;
+      background: #DDDED6;
+      color: #1A1A1A;
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════
        SECTION 05 — NOS PARTENAIRES
     ════════════════════════════════════ */
     .s05 {
-      background-color: #DDDED6;
+      background-color: #F4F4F4;
       padding: 60px 0;
     }
 
@@ -541,7 +593,7 @@
     }
 
     .s05-card {
-      background-color: #F4F4F4;
+      background-color: #DDDED6;
       border-radius: 12px;
       padding: 28px;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -973,6 +1025,22 @@
       margin-bottom: 40px;
     }
 
+    /* Composition + phrase d'aperçu sous la grille */
+    .s-catalogue__compo,
+    .s-catalogue__apercu {
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: rgba(26, 26, 26, 0.75);
+      line-height: 1.65;
+      margin-top: 20px;
+      max-width: 860px;
+    }
+
+    .s-catalogue__compo strong {
+      font-weight: 700;
+      color: #9D84C7;
+    }
+
     /* ── Bandeau réalisations ── */
     .s-realisations {
       background-color: #1A1A1A;
@@ -1010,6 +1078,74 @@
     }
     .nav { top: 20px; }
   </style>
+
+  <!-- JSON-LD : LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://projocustom.com/#localbusiness",
+    "name": "PROJO",
+    "legalName": "ANIMUS-CORP SAS",
+    "description": "Atelier de customisation textile à Reims. Broderie, DTF, patchs et packaging pour entreprises, clubs, associations, universités et collectivités.",
+    "url": "https://projocustom.com/",
+    "logo": "https://projocustom.com/assets/logo/Logo_Projo_fond_blanc.png",
+    "image": "https://projocustom.com/assets/images/og-projocustom.jpg",
+    "telephone": "+33745195539",
+    "email": "contact@projocustom.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7 rue Pierre Salmon",
+      "postalCode": "51430",
+      "addressLocality": "Bezannes",
+      "addressRegion": "Grand Est",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "français",
+      "alternateName": "fr"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Prestations de customisation textile",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Broderie"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Impression DTF"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Patchs brodés et tissés"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Packaging textile"
+          }
+        }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -1017,8 +1153,7 @@
        TICKER BAND
   ══════════════════════════════ -->
   <div class="ticker-band" role="marquee" aria-live="polite">
-    <span class="ticker-band__item is-active">Expédition sous 48 heures<sup>*</sup></span>
-    <span class="ticker-band__item">Devis gratuit sous 24h</span>
+    <span class="ticker-band__item is-active">Devis gratuit sous 48h</span>
     <span class="ticker-band__item">Aucun minimum de commande<sup>*</sup></span>
   </div>
 
@@ -1066,7 +1201,7 @@
   <section class="hero-v2" id="accueil">
     <div class="hero-v2__inner container">
       <div class="hero-v2__content">
-        <h1 class="hero-v2__title">Votre projet entre nos mains expertes.</h1>
+        <h1 class="hero-v2__title">Votre projet textile entre nos mains expertes.</h1>
         <p class="hero-v2__subtitle">Vous cherchez du textile à la hauteur de votre projet, livré par des spécialistes en qui vous pouvez avoir confiance ? On a monté cet atelier pour ça ! Une équipe entière, un seul lieu à Reims 🇫🇷, du premier fil à la livraison !</p>
         <div class="hero-v2__ctas">
           <a href="#contact" class="btn-noir">Parler de votre projet</a>
@@ -1115,10 +1250,22 @@
           <img src="assets/images/Photo Jean.jpeg" alt="Jean dans l'atelier PROJO Custom" loading="lazy">
         </div>
         <div class="s02__tech-grid">
-          <a href="#" class="s02-tech-card">Nos Broderies</a>
-          <a href="#" class="s02-tech-card">Nos DTF</a>
-          <a href="#" class="s02-tech-card">Nos Patchs</a>
-          <a href="#" class="s02-tech-card">Nos Packagings</a>
+          <div class="s02-tech-card">
+            <span class="s02-tech-card__title">Nos Broderies</span>
+            <p class="s02-tech-card__body">Le motif est cousu dans le textile, point par point. Du relief, une tenue dans le temps. Parfait pour les logos d'entreprise, les polos, les casquettes.</p>
+          </div>
+          <div class="s02-tech-card">
+            <span class="s02-tech-card__title">Nos DTF</span>
+            <p class="s02-tech-card__body">Impression haute définition sur n'importe quel textile. Couleurs illimitées, dégradés complexes, petites séries bienvenues. Pas de minimum de quantité.</p>
+          </div>
+          <div class="s02-tech-card">
+            <span class="s02-tech-card__title">Nos Patchs</span>
+            <p class="s02-tech-card__body">Un écusson brodé ou tissé, cousu sur le vêtement. Sur les bombers, les casquettes, les vestes. Effet immédiat, finition couture.</p>
+          </div>
+          <div class="s02-tech-card">
+            <span class="s02-tech-card__title">Nos Packagings</span>
+            <p class="s02-tech-card__body">Pochons en tissu, boîtes cartonnées, hangtags. Tout ce qui accompagne le vêtement, à vos couleurs.</p>
+          </div>
         </div>
       </div>
 
@@ -1130,26 +1277,27 @@
   ══════════════════════════════ -->
   <section class="s-catalogue">
     <div class="container">
-      <h2 class="s-catalogue__title">Notre catalogue</h2>
+      <h2 class="s-catalogue__title">Nos supports textiles</h2>
       <div class="s03-catalogue__grid">
-        <div class="s03-vignette" style="background-color:#FFFFFF;">
-          <img src="assets/images/Tshirt oversized blanc 1.webp" alt="T-shirts personnalisés" class="s03-vignette__img" loading="lazy">
-          <span class="s03-vignette__label">T-shirts</span>
+        <div class="s03-vignette">
+          <img src="assets/images/tee-regular-noir.webp" alt="T-shirt regular noir personnalisable, coupe droite, 200 g/m²" class="s03-vignette__img" width="800" height="1000" loading="lazy">
+          <span class="s03-vignette__label">T-shirt regular — Noir</span>
         </div>
-        <div class="s03-vignette" style="background-color:#FFFFFF;">
-          <img src="assets/images/Hoodie gris 1.webp" alt="Hoodies personnalisés" class="s03-vignette__img" loading="lazy">
-          <span class="s03-vignette__label">Hoodies</span>
+        <div class="s03-vignette">
+          <img src="assets/images/tee-regular-blanc.webp" alt="T-shirt regular blanc personnalisable, coupe droite, 200 g/m²" class="s03-vignette__img" width="800" height="1000" loading="lazy">
+          <span class="s03-vignette__label">T-shirt regular — Blanc</span>
         </div>
-        <div class="s03-vignette" style="background-color:#FFFFFF;">
-          <img src="assets/images/Sweat Noir 1.webp" alt="Sweats personnalisés" class="s03-vignette__img" loading="lazy">
-          <span class="s03-vignette__label">Sweats</span>
+        <div class="s03-vignette">
+          <img src="assets/images/tee-oversized-noir.webp" alt="T-shirt oversized noir personnalisable, coupe ample, 200 g/m²" class="s03-vignette__img" width="800" height="1000" loading="lazy">
+          <span class="s03-vignette__label">T-shirt oversized — Noir</span>
         </div>
-        <div class="s03-vignette" style="background-color:#FFFFFF;">
-          <img src="assets/images/Casquette Noir 3.webp" alt="Accessoires personnalisés" class="s03-vignette__img" loading="lazy">
-          <span class="s03-vignette__label">Accessoires</span>
+        <div class="s03-vignette">
+          <img src="assets/images/tee-oversized-beige.webp" alt="T-shirt oversized beige personnalisable, coupe ample, 200 g/m²" class="s03-vignette__img" width="800" height="1000" loading="lazy">
+          <span class="s03-vignette__label">T-shirt oversized — Beige</span>
         </div>
       </div>
-      <a href="#" class="s03__catalogue-link">Voir tout le catalogue →</a>
+      <p class="s-catalogue__compo"><strong>Coupe regular</strong> — 200 g/m², 100 % coton, toucher doux et naturel.<br><strong>Coupe oversized</strong> — 200 g/m², Tech-Blend : 53 % coton, 30 % polyester recyclé, 17 % élastomultiester, pour une structure moderne et indéformable.</p>
+      <p class="s-catalogue__apercu">Un aperçu de nos supports. T-shirts, polos, sweats, sweats à capuche, casquettes, bonnets, tote bags : décrivez-nous votre projet, on vous transmet une sélection adaptée.</p>
     </div>
   </section>
 
@@ -1184,6 +1332,24 @@
           <p class="s04-step__body">On expédie quand c'est prêt. Vous recevez exactement ce que vous avez vu sur la maquette.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SECTION POUR QUI ON TRAVAILLE
+  ══════════════════════════════ -->
+  <section class="s-cibles" id="cibles">
+    <div class="container">
+      <h2 class="s-cibles__title">Pour qui on travaille</h2>
+      <p class="s-cibles__subtitle">Entreprises, collectivités, clubs sportifs, associations, universités et BDE, organisateurs d'événements. On adapte les techniques, les quantités et les délais à chaque type de projet.</p>
+      <ul class="s-cibles__list">
+        <li><span class="s-cibles__tag">Entreprises</span></li>
+        <li><span class="s-cibles__tag">Collectivités</span></li>
+        <li><span class="s-cibles__tag">Clubs sportifs</span></li>
+        <li><span class="s-cibles__tag">Associations</span></li>
+        <li><span class="s-cibles__tag">Universités &amp; BDE</span></li>
+        <li><span class="s-cibles__tag">Événements</span></li>
+      </ul>
     </div>
   </section>
 
@@ -1244,7 +1410,7 @@
         <!-- Colonne gauche : titre + formulaire -->
         <div class="s06__form-col">
           <h2 class="s06__title">Racontez-nous votre projet.</h2>
-          <p class="s06__subtitle">Réponse sous 48h. On ne facture rien sans votre accord.</p>
+          <p class="s06__subtitle">Réponse sous 24h. Devis gratuit sous 48h. On ne facture rien sans votre accord.</p>
 
           <form name="contact-v2" method="POST" action="https://api.web3forms.com/submit" class="contact-form-v2" id="contact-form-v2" novalidate>
             <input type="hidden" name="form-name" value="contact-v2">
@@ -1282,6 +1448,11 @@
 
             <button type="submit" class="btn-noir">Envoyer ma demande</button>
           </form>
+
+          <p class="form-separator">— ou par téléphone —</p>
+          <div style="text-align:center;">
+            <a href="tel:+33745195539" class="btn-secondary">+33 7 45 19 55 39</a>
+          </div>
         </div>
 
         <!-- Colonne droite : "Plutôt direct ?" -->
@@ -1293,7 +1464,7 @@
           </div>
           <div class="s06-contact-card">
             <span class="s06-contact-card__label">Par t&eacute;l&eacute;phone</span>
-            <a href="https://calendly.com/contact-projostore/30min" class="s06-contact-card__value" target="_blank" rel="noopener noreferrer">Réserver un appel →</a>
+            <a href="tel:+33745195539" class="s06-contact-card__value">+33 7 45 19 55 39</a>
           </div>
         </div>
 
@@ -1329,35 +1500,7 @@
             <p class="footer-col__heading">Contact</p>
             <div class="footer-col__contact">
               <a href="mailto:contact@projocustom.com">contact@projocustom.com</a>
-              <a href="https://calendly.com/contact-projostore/30min" target="_blank" rel="noopener noreferrer">Réserver un appel</a>
-              <div class="footer-social">
-                <a href="#" aria-label="Instagram PROJO Custom">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <circle cx="12" cy="12" r="4"/>
-                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                  </svg>
-                </a>
-                <a href="#" aria-label="Facebook PROJO Custom">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                  </svg>
-                </a>
-                <a href="#" aria-label="X (Twitter) PROJO Custom">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L2.25 2.25h6.978l4.263 5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
-                <a href="#" aria-label="LinkedIn PROJO Custom">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="3"/>
-                    <line x1="8" y1="11" x2="8" y2="16"/>
-                    <line x1="8" y1="8" x2="8" y2="8.5"/>
-                    <line x1="12" y1="16" x2="12" y2="11"/>
-                    <path d="M12 13.5a2.5 2.5 0 0 1 5 0V16"/>
-                  </svg>
-                </a>
-              </div>
+              <a href="tel:+33745195539">+33 7 45 19 55 39</a>
             </div>
           </div>
 
@@ -1398,7 +1541,7 @@
       </div>
       <div class="wa-bubble__compose">
         <input type="text" class="wa-bubble__input" id="wa-input" placeholder="Écrire un message…" value="Bonjour PROJO Custom, j'ai une question sur un projet de customisation">
-        <a class="wa-bubble__send" id="wa-send" href="https://wa.me/33666525733" target="_blank" rel="noopener noreferrer" aria-label="Envoyer sur WhatsApp">
+        <a class="wa-bubble__send" id="wa-send" href="https://wa.me/33745195539" target="_blank" rel="noopener noreferrer" aria-label="Envoyer sur WhatsApp">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </a>
       </div>

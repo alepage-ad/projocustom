@@ -7,7 +7,6 @@ Le site **projocustom.com** est hébergé sur **GitHub Pages**.
 - Branche déployée : `main`
 - Domaine custom : `projocustom.com` (configuré via `CNAME`)
 - Tout push sur `main` déclenche un déploiement automatique.
-- Le fichier `netlify.toml` à la racine est un résidu legacy, il n'est pas utilisé.
 
 ## Structure des branches
 
