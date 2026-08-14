@@ -290,10 +290,13 @@
 
     .s02__tech-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      /* minmax(0, 1fr) : sans ça les colonnes ne peuvent pas descendre sous la
+         largeur min-content des descriptions et débordent à 320px / 768px */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-auto-rows: 1fr;
       gap: 12px;
       flex: 1;
+      min-width: 0;
     }
 
     /* Blocs non cliquables : ni hover, ni curseur main */
@@ -313,7 +316,7 @@
 
     @media (min-width: 1024px) {
       .s02__tech-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -546,9 +549,20 @@
       padding: 0;
     }
 
+    /* VHS-Gothic mappe bien U+00C9 mais son glyphe É est dessiné comme un é
+       minuscule. On substitue ce seul caractère par Monoglyphic, déjà présent
+       dans le projet : les autres caractères continuent de tomber sur
+       VHS-Gothic. */
+    @font-face {
+      font-family: 'VHS-Gothic-Eacute';
+      src: url('assets/fonts/Monoglyphic-Regular.otf') format('opentype');
+      unicode-range: U+00C9;
+      font-display: swap;
+    }
+
     /* Tags rectangulaires : même traitement que la nav */
     .s-cibles__tag {
-      font-family: 'VHS-Gothic', sans-serif;
+      font-family: 'VHS-Gothic-Eacute', 'VHS-Gothic', sans-serif;
       display: inline-block;
       border: 1.5px solid #1A1A1A;
       border-radius: 0;
@@ -556,6 +570,38 @@
       background: #DDDED6;
       color: #1A1A1A;
       white-space: nowrap;
+    }
+
+    /* Sous 1280px la rangée unique ne tient pas : grille à colonnes égales,
+       cellules de largeur et de hauteur identiques, texte centré. Le nombre de
+       colonnes retombe naturellement à 1 sur mobile, où « Universités & BDE »
+       ne tiendrait pas sur une demi-largeur. */
+    @media (max-width: 1279px) {
+      .s-cibles__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 8px;
+      }
+
+      .s-cibles__list li {
+        display: flex;
+      }
+
+      .s-cibles__tag {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* Mobile : police réduite et padding vertical resserré pour rester compact */
+    @media (max-width: 767px) {
+      .s-cibles__tag {
+        font-size: 13px;
+        padding: 7px 10px;
+      }
     }
 
     /* ════════════════════════════════════
@@ -1025,12 +1071,35 @@
       margin-bottom: 40px;
     }
 
-    /* Composition + phrase d'aperçu sous la grille */
-    .s-catalogue__compo,
+    /* Phrase d'aperçu : niveau dominant sous la grille */
     .s-catalogue__apercu {
       font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+      font-size: 19px;
+      color: #1A1A1A;
+      line-height: 1.6;
+      margin-top: 24px;
+      max-width: 860px;
+    }
+
+    .s-catalogue__apercu strong {
+      font-weight: 600;
+    }
+
+    .s-catalogue__apercu a {
+      color: #1A1A1A;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .s-catalogue__apercu a:hover {
+      color: #9D84C7;
+    }
+
+    /* Ligne composition : fiche technique, niveau secondaire */
+    .s-catalogue__compo {
+      font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
       font-size: 14px;
-      color: rgba(26, 26, 26, 0.75);
+      color: rgba(26, 26, 26, 0.55);
       line-height: 1.65;
       margin-top: 20px;
       max-width: 860px;
@@ -1219,12 +1288,12 @@
   <section class="s-realisations" id="realisations">
   <div class="image-scroll" aria-label="Galerie de réalisations">
     <div class="image-scroll__track">
-      <div class="image-scroll__item image-scroll__item--1"><img src="assets/images/real-sharingan.png" alt="T-shirt noir Sharingan personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--2"><img src="assets/images/real-akatsuki.png" alt="T-shirt noir Akatsuki personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--3"><img src="assets/images/real-zoro.png" alt="T-shirt noir Zoro One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--4"><img src="assets/images/real-sasuke.png" alt="T-shirt noir Sasuke personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--5"><img src="assets/images/real-luffy.png" alt="T-shirt blanc Luffy One Piece personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
-      <div class="image-scroll__item image-scroll__item--6"><img src="assets/images/real-konoha.png" alt="Broderie Konoha Naruto sur t-shirt noir" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--1"><img src="assets/images/real-sharingan.png" alt="Impression DTF sur t-shirt noir personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--2"><img src="assets/images/real-akatsuki.png" alt="Broderie personnalisée sur t-shirt noir" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--3"><img src="assets/images/real-zoro.png" alt="T-shirt noir personnalisé par impression DTF haute définition" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--4"><img src="assets/images/real-sasuke.png" alt="Broderie sur t-shirt noir, réalisation atelier PROJO Reims" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--5"><img src="assets/images/real-luffy.png" alt="Impression DTF sur t-shirt blanc personnalisé" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+      <div class="image-scroll__item image-scroll__item--6"><img src="assets/images/real-konoha.png" alt="Broderie personnalisée sur t-shirt, atelier PROJO" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
       <!-- Duplicates pour boucle CSS seamless -->
       <div class="image-scroll__item image-scroll__item--1" aria-hidden="true"><img src="assets/images/real-sharingan.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
       <div class="image-scroll__item image-scroll__item--2" aria-hidden="true"><img src="assets/images/real-akatsuki.png" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
@@ -1277,7 +1346,7 @@
   ══════════════════════════════ -->
   <section class="s-catalogue">
     <div class="container">
-      <h2 class="s-catalogue__title">Nos supports textiles</h2>
+      <h2 class="s-catalogue__title">Notre catalogue textile</h2>
       <div class="s03-catalogue__grid">
         <div class="s03-vignette">
           <img src="assets/images/tee-regular-noir.webp" alt="T-shirt regular noir personnalisable, coupe droite, 200 g/m²" class="s03-vignette__img" width="800" height="1000" loading="lazy">
@@ -1296,8 +1365,8 @@
           <span class="s03-vignette__label">T-shirt oversized — Beige</span>
         </div>
       </div>
+      <p class="s-catalogue__apercu">Un aperçu de nos supports. <strong>T-shirts, polos, sweats, sweats à capuche, casquettes, bonnets, tote bags</strong> : <a href="#contact">décrivez-nous votre projet</a>, on vous transmet une sélection adaptée.</p>
       <p class="s-catalogue__compo"><strong>Coupe regular</strong> — 200 g/m², 100 % coton, toucher doux et naturel.<br><strong>Coupe oversized</strong> — 200 g/m², Tech-Blend : 53 % coton, 30 % polyester recyclé, 17 % élastomultiester, pour une structure moderne et indéformable.</p>
-      <p class="s-catalogue__apercu">Un aperçu de nos supports. T-shirts, polos, sweats, sweats à capuche, casquettes, bonnets, tote bags : décrivez-nous votre projet, on vous transmet une sélection adaptée.</p>
     </div>
   </section>
 
@@ -1448,11 +1517,6 @@
 
             <button type="submit" class="btn-noir">Envoyer ma demande</button>
           </form>
-
-          <p class="form-separator">— ou par téléphone —</p>
-          <div style="text-align:center;">
-            <a href="tel:+33745195539" class="btn-secondary">+33 7 45 19 55 39</a>
-          </div>
         </div>
 
         <!-- Colonne droite : "Plutôt direct ?" -->
